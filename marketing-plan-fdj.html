@@ -1,0 +1,2028 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Fleurs de Jardin — Pre-Launch Campaign Marketing Plan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,400&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0a0a;
+    --bg-soft: #111111;
+    --ink: #f6f1e7;
+    --ink-dim: #b8b1a3;
+    --accent: #ff5b3a;        /* vibrant orange-red */
+    --accent-2: #f7c948;      /* gold */
+    --accent-3: #2e8b6f;      /* emerald */
+    --accent-4: #c84b6b;      /* ruby pink */
+    --accent-5: #4a6bd6;      /* sapphire blue */
+    --line: rgba(246, 241, 231, 0.12);
+    --card: #161616;
+    --radius: 18px;
+    --maxw: 1480px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; scroll-padding-top: 30px; }
+
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.5;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection { background: var(--accent); color: #fff; }
+
+  /* ===== Hero in-page nav (replaces fixed navbar) ===== */
+  .hero-nav {
+    margin-top: 50px;
+    padding-top: 28px;
+    border-top: 1px solid var(--line);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 32px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+  }
+  .hero-nav a {
+    color: var(--ink-dim);
+    text-decoration: none;
+    transition: color 0.2s;
+    position: relative;
+    padding-bottom: 4px;
+  }
+  .hero-nav a::after {
+    content: "";
+    position: absolute;
+    left: 50%; bottom: 0;
+    width: 0; height: 1px;
+    background: var(--accent);
+    transition: width 0.3s ease, left 0.3s ease;
+  }
+  .hero-nav a:hover { color: var(--accent); }
+  .hero-nav a:hover::after { width: 100%; left: 0; }
+  @media (max-width: 768px) {
+    .hero-nav {
+      gap: 16px;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      margin-top: 36px;
+      padding-top: 22px;
+    }
+  }
+
+  /* ===== Hero ===== */
+  .hero {
+    min-height: 100vh;
+    padding: 21px 40px 12px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(180deg, rgba(10,10,10,0.55) 0%, rgba(10,10,10,0.35) 40%, rgba(10,10,10,0.85) 100%),
+      url("https://mcusercontent.com/03320827781bfef6d5e9f5ead/images/b980c82b-4749-77a7-d860-7425784901e9.jpg");
+    background-size: cover, cover;
+    background-position: center, center;
+    background-repeat: no-repeat, no-repeat;
+    z-index: 0;
+    animation: kenburns 22s ease-in-out infinite alternate;
+  }
+  @keyframes kenburns {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.08); }
+  }
+  .hero-inner {
+    position: relative;
+    z-index: 1;
+    max-width: var(--maxw);
+    margin: 0 auto;
+    width: 100%;
+  }
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--ink-dim);
+    margin-bottom: 30px;
+  }
+  .hero-eyebrow::before,
+  .hero-eyebrow::after {
+    content: "";
+    width: 36px; height: 1px;
+    background: var(--accent);
+  }
+  .hero-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-size: clamp(48px, 9vw, 148px);
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    margin-bottom: 30px;
+  }
+  .hero-title em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--accent);
+  }
+  .hero-title .ampersand {
+    font-style: italic;
+    color: var(--accent-2);
+    font-weight: 300;
+  }
+  .hero-logo {
+    margin: 0 auto 50px;
+    max-width: 720px;
+  }
+  .hero-logo img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: invert(1) brightness(1.05);
+  }
+  .hero-by {
+    margin: 36px auto 0;
+    max-width: 280px;
+  }
+  .hero-by img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: invert(1) brightness(1.05);
+    opacity: 0.85;
+  }
+  .hero-meta {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    max-width: 900px;
+    margin: 60px auto 0;
+    padding-top: 30px;
+    border-top: 1px solid var(--line);
+    text-align: center;
+  }
+  .hero-meta div { display: flex; flex-direction: column; gap: 6px; align-items: center; }
+  .hero-meta dt {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--ink-dim);
+  }
+  .hero-meta dd {
+    font-family: 'Fraunces', serif;
+    font-size: 18px;
+    font-weight: 400;
+  }
+
+  @media (max-width: 768px) {
+    .hero { padding: 16px 20px 9px; }
+    .hero-meta { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  }
+
+  /* ===== Section ===== */
+  .section {
+    padding: 120px 40px;
+    position: relative;
+  }
+  .section-inner {
+    max-width: var(--maxw);
+    margin: 0 auto;
+  }
+  .section-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 70px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid var(--line);
+    text-align: center;
+  }
+  .section-tag {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .section-tag .tag-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: #fff;
+    font-weight: 600;
+  }
+  .section-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-size: clamp(36px, 5.5vw, 84px);
+    line-height: 1;
+    letter-spacing: -0.03em;
+  }
+  .section-title em {
+    font-style: italic;
+    color: var(--accent);
+  }
+  .section-desc {
+    font-size: 17px;
+    color: var(--ink-dim);
+    max-width: 600px;
+    margin: 24px auto 0;
+  }
+
+  @media (max-width: 900px) {
+    .section { padding: 80px 20px; }
+  }
+
+  /* ===== Instagram Static Posts ===== */
+  .ig-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px 40px;
+  }
+  .ig-grid.two-up { grid-template-columns: repeat(2, 1fr); gap: 50px 40px; max-width: 1100px; margin: 0 auto; }
+  @media (max-width: 1100px) { .ig-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 640px) { .ig-grid, .ig-grid.two-up { grid-template-columns: 1fr; gap: 40px; } }
+
+  /* Instagram 4:5 mockup */
+  .ig-card {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .ig-mockup {
+    background: var(--card);
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--line);
+    box-shadow: 0 30px 60px -25px rgba(0,0,0,0.7), 0 10px 25px -10px rgba(0,0,0,0.5);
+    transition: transform 0.5s cubic-bezier(.2,.8,.2,1), box-shadow 0.5s;
+  }
+  .ig-card:hover .ig-mockup {
+    transform: translateY(-6px);
+    box-shadow: 0 40px 80px -25px rgba(255, 91, 58, 0.25), 0 10px 25px -10px rgba(0,0,0,0.5);
+  }
+  .ig-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--line);
+  }
+  .ig-user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .ig-avatar {
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border: 1.5px solid #1a1a1a;
+    flex-shrink: 0;
+  }
+  .ig-avatar img,
+  .ig-avatar svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+  }
+  .ig-username {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .ig-username .verified {
+    display: inline-block;
+    width: 12px; height: 12px;
+    background: var(--accent-5);
+    border-radius: 50%;
+    margin-left: 4px;
+    vertical-align: middle;
+    position: relative;
+  }
+  .ig-username .verified::after {
+    content: "✓";
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -55%);
+    font-size: 9px;
+    color: #fff;
+    font-weight: 700;
+  }
+  .ig-dots {
+    color: var(--ink);
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+  /* 4:5 image */
+  .ig-image {
+    aspect-ratio: 4 / 5;
+    background: linear-gradient(135deg, #2a1a1a, #1a1010);
+    position: relative;
+    overflow: hidden;
+  }
+  .ig-image img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .ig-image.placeholder-1 {
+    background:
+      radial-gradient(circle at 30% 30%, rgba(255, 91, 58, 0.6), transparent 55%),
+      radial-gradient(circle at 75% 65%, rgba(247, 201, 72, 0.5), transparent 50%),
+      radial-gradient(circle at 50% 95%, rgba(200, 75, 107, 0.4), transparent 50%),
+      linear-gradient(135deg, #2a0a18, #0d0408);
+  }
+  .ig-image.placeholder-2 {
+    background:
+      radial-gradient(circle at 70% 25%, rgba(46, 139, 111, 0.55), transparent 55%),
+      radial-gradient(circle at 25% 75%, rgba(74, 107, 214, 0.5), transparent 50%),
+      radial-gradient(circle at 80% 90%, rgba(247, 201, 72, 0.35), transparent 45%),
+      linear-gradient(135deg, #0a1a18, #050a0d);
+  }
+  .ig-image.placeholder-3 {
+    background:
+      radial-gradient(circle at 50% 30%, rgba(200, 75, 107, 0.6), transparent 55%),
+      radial-gradient(circle at 20% 80%, rgba(255, 91, 58, 0.45), transparent 50%),
+      radial-gradient(circle at 85% 70%, rgba(74, 107, 214, 0.4), transparent 50%),
+      linear-gradient(135deg, #1a0820, #08040d);
+  }
+  .ig-image.placeholder-4 {
+    background:
+      radial-gradient(circle at 25% 25%, rgba(247, 201, 72, 0.55), transparent 50%),
+      radial-gradient(circle at 75% 75%, rgba(46, 139, 111, 0.55), transparent 50%),
+      radial-gradient(circle at 50% 50%, rgba(255, 91, 58, 0.3), transparent 60%),
+      linear-gradient(135deg, #2a1f08, #0d0a04);
+  }
+  .ig-image.placeholder-5 {
+    background:
+      radial-gradient(circle at 60% 30%, rgba(74, 107, 214, 0.6), transparent 55%),
+      radial-gradient(circle at 30% 70%, rgba(200, 75, 107, 0.5), transparent 50%),
+      radial-gradient(circle at 80% 90%, rgba(46, 139, 111, 0.35), transparent 50%),
+      linear-gradient(135deg, #08102a, #04060d);
+  }
+  .ig-image.placeholder-6 {
+    background:
+      radial-gradient(circle at 20% 40%, rgba(255, 91, 58, 0.5), transparent 55%),
+      radial-gradient(circle at 80% 30%, rgba(247, 201, 72, 0.45), transparent 50%),
+      radial-gradient(circle at 50% 80%, rgba(46, 139, 111, 0.4), transparent 55%),
+      linear-gradient(135deg, #1a1208, #08050d);
+  }
+  .ig-image:has(img)::after { display: none; }
+  .ig-image::after {
+    content: "SAMPLE IMAGE";
+    position: absolute;
+    bottom: 18px; right: 18px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: rgba(255,255,255,0.65);
+    background: rgba(0,0,0,0.35);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    padding: 6px 10px;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,0.15);
+  }
+  .ig-image .floral {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+  }
+  .ig-image .floral svg {
+    width: 60%; height: auto;
+    opacity: 0.55;
+    filter: drop-shadow(0 4px 30px rgba(0,0,0,0.4));
+  }
+
+  .ig-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 14px 4px;
+  }
+  .ig-actions-left {
+    display: flex;
+    gap: 14px;
+    color: var(--ink);
+  }
+  .ig-actions svg {
+    width: 22px; height: 22px;
+    stroke: var(--ink);
+    fill: none;
+    stroke-width: 1.7;
+  }
+  .ig-likes {
+    padding: 4px 14px 0;
+    font-size: 13px;
+    font-weight: 600;
+  }
+  .ig-caption {
+    padding: 6px 14px 14px;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+  .ig-caption .username {
+    font-weight: 600;
+    margin-right: 6px;
+  }
+  .ig-caption .more {
+    color: var(--ink-dim);
+    cursor: pointer;
+    font-weight: 500;
+  }
+  .ig-caption-text {
+    display: block;
+  }
+  .ig-time {
+    padding: 6px 14px 14px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-dim);
+  }
+
+  /* Card meta below mockup */
+  .ig-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 4px;
+  }
+  .ig-meta-label {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--ink-dim);
+  }
+  .ig-meta-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    background: rgba(255, 91, 58, 0.12);
+    color: var(--accent);
+    border: 1px solid rgba(255, 91, 58, 0.25);
+  }
+  .ig-meta-pill.gold { background: rgba(247, 201, 72, 0.12); color: var(--accent-2); border-color: rgba(247, 201, 72, 0.25); }
+  .ig-meta-pill.green { background: rgba(46, 139, 111, 0.15); color: var(--accent-3); border-color: rgba(46, 139, 111, 0.3); }
+  .ig-meta-pill.pink { background: rgba(200, 75, 107, 0.15); color: var(--accent-4); border-color: rgba(200, 75, 107, 0.3); }
+  .ig-meta-pill.blue { background: rgba(74, 107, 214, 0.15); color: var(--accent-5); border-color: rgba(74, 107, 214, 0.3); }
+
+  /* Footer */
+  .footer {
+    padding: 80px 40px 50px;
+    border-top: 1px solid var(--line);
+    text-align: center;
+    color: var(--ink-dim);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+  }
+  .footer-logo img {
+    height: 60px;
+    width: auto;
+  }
+  .footer-text {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+  }
+
+  /* Reveal */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s cubic-bezier(.2,.8,.2,1);
+  }
+  .reveal.in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Marquee accent */
+  .marquee {
+    overflow: hidden;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    padding: 18px 0;
+    background: var(--bg-soft);
+  }
+  .marquee-track {
+    display: flex;
+    gap: 50px;
+    white-space: nowrap;
+    animation: marquee 60s linear infinite;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--ink);
+  }
+  .marquee-track span { display: inline-flex; align-items: center; gap: 50px; }
+  .marquee-track span::after {
+    content: "✸";
+    color: var(--accent);
+    font-size: 13px;
+  }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* ===== Instagram Reels (16:9 landscape) ===== */
+  .reel-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 30px;
+  }
+  @media (max-width: 800px) { .reel-grid { grid-template-columns: 1fr; gap: 30px; } }
+
+  .reel-card { display: flex; flex-direction: column; gap: 18px; }
+  .reel-mockup {
+    aspect-ratio: 16 / 9;
+    background: #000;
+    border-radius: 18px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    position: relative;
+    box-shadow: 0 30px 60px -25px rgba(0,0,0,0.7), 0 10px 25px -10px rgba(0,0,0,0.5);
+    transition: transform 0.5s cubic-bezier(.2,.8,.2,1), box-shadow 0.5s;
+  }
+  .reel-card:hover .reel-mockup {
+    transform: translateY(-6px);
+    box-shadow: 0 40px 80px -25px rgba(255, 91, 58, 0.25), 0 10px 25px -10px rgba(0,0,0,0.5);
+  }
+  .reel-bg {
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+  }
+  .reel-video {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    background: #000;
+    border: 0;
+    display: block;
+  }
+  .reel-bg.gr-1 {
+    background:
+      radial-gradient(circle at 30% 30%, rgba(255, 91, 58, 0.65), transparent 55%),
+      radial-gradient(circle at 75% 75%, rgba(247, 201, 72, 0.5), transparent 50%),
+      linear-gradient(180deg, #2a0a18, #050207);
+  }
+  .reel-bg.gr-2 {
+    background:
+      radial-gradient(circle at 65% 30%, rgba(46, 139, 111, 0.6), transparent 55%),
+      radial-gradient(circle at 30% 75%, rgba(74, 107, 214, 0.5), transparent 50%),
+      linear-gradient(180deg, #061814, #03070a);
+  }
+  .reel-bg.gr-3 {
+    background:
+      radial-gradient(circle at 50% 30%, rgba(200, 75, 107, 0.65), transparent 55%),
+      radial-gradient(circle at 30% 80%, rgba(247, 201, 72, 0.4), transparent 50%),
+      linear-gradient(180deg, #1a0820, #050208);
+  }
+  .reel-bg.gr-4 {
+    background:
+      radial-gradient(circle at 30% 30%, rgba(247, 201, 72, 0.6), transparent 50%),
+      radial-gradient(circle at 70% 70%, rgba(255, 91, 58, 0.5), transparent 50%),
+      linear-gradient(180deg, #1f1605, #060403);
+  }
+  .reel-bg.gr-5 {
+    background:
+      radial-gradient(circle at 60% 25%, rgba(74, 107, 214, 0.65), transparent 55%),
+      radial-gradient(circle at 30% 80%, rgba(46, 139, 111, 0.4), transparent 50%),
+      linear-gradient(180deg, #050d24, #02050d);
+  }
+  .reel-bg.gr-6 {
+    background:
+      radial-gradient(circle at 25% 25%, rgba(255, 91, 58, 0.55), transparent 55%),
+      radial-gradient(circle at 80% 75%, rgba(200, 75, 107, 0.45), transparent 50%),
+      linear-gradient(180deg, #1a0a08, #060305);
+  }
+  .reel-floral {
+    width: 65%; max-width: 220px; opacity: 0.8;
+    filter: drop-shadow(0 6px 30px rgba(0,0,0,0.5));
+  }
+  .reel-top {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    padding: 12px 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(180deg, rgba(0,0,0,0.55), transparent);
+    z-index: 2;
+    pointer-events: none;
+  }
+  .reel-top-label {
+    color: #fff;
+    font-weight: 700;
+    font-size: 13px;
+  }
+  .reel-top-icon {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+  .reel-side {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+    z-index: 2;
+    pointer-events: none;
+  }
+  .reel-side-item {
+    display: flex; flex-direction: column;
+    align-items: center; gap: 4px;
+    color: #fff;
+  }
+  .reel-side-item svg {
+    width: 22px; height: 22px;
+    fill: #fff; stroke: #fff; stroke-width: 1.5;
+    filter: drop-shadow(0 2px 6px rgba(0,0,0,0.6));
+  }
+  .reel-side-item.heart svg { fill: #fff; }
+  .reel-side-item span {
+    font-size: 11px;
+    font-weight: 600;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.6);
+  }
+  .reel-side-item.disc {
+    width: 26px; height: 26px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid #fff;
+    background: linear-gradient(135deg, #c47525, #f4b860);
+    margin-top: 4px;
+    animation: spin 8s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  .reel-bottom {
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    padding: 14px 70px 14px 14px;
+    background: linear-gradient(0deg, rgba(0,0,0,0.78), rgba(0,0,0,0.55) 55%, transparent);
+    color: #fff;
+    z-index: 2;
+    pointer-events: none;
+  }
+  .reel-user {
+    display: flex; align-items: center; gap: 8px;
+    margin-bottom: 6px;
+  }
+  .reel-user .ig-avatar { width: 26px; height: 26px; border-width: 1.5px; }
+  .reel-user-name {
+    font-size: 13px; font-weight: 600;
+  }
+  .reel-follow {
+    margin-left: 8px;
+    padding: 3px 10px;
+    border: 1px solid #fff;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 600;
+  }
+  .reel-caption {
+    font-size: 11.5px;
+    line-height: 1.4;
+    margin-bottom: 6px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .reel-audio {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    opacity: 0.95;
+  }
+  .reel-audio::before {
+    content: "♪";
+    font-size: 13px;
+  }
+  .reel-mockup { cursor: pointer; }
+  .reel-error {
+    position: absolute;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    color: #ff5b3a;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    z-index: 4;
+    background: rgba(0,0,0,0.6);
+    pointer-events: none;
+  }
+  .reel-mockup.errored .reel-error { display: flex; }
+  .reel-mockup.errored .reel-play { opacity: 0; }
+
+  .reel-mute {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.35);
+    background: rgba(0,0,0,0.55);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 4;
+    pointer-events: auto;
+    padding: 0;
+    transition: background 0.2s ease, transform 0.2s cubic-bezier(.2,.8,.2,1);
+    box-shadow: 0 4px 14px -4px rgba(0,0,0,0.5);
+  }
+  .reel-mute:hover {
+    background: rgba(0,0,0,0.78);
+    transform: scale(1.06);
+  }
+  .reel-mute svg { width: 18px; height: 18px; pointer-events: none; }
+  .reel-mute .icon-unmute { display: none; }
+  .reel-mute.unmuted .icon-mute { display: none; }
+  .reel-mute.unmuted .icon-unmute { display: block; }
+  .reel-play {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 64px; height: 64px;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.55);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+    opacity: 1;
+    pointer-events: none;
+    border: 1.5px solid rgba(255,255,255,0.45);
+    box-shadow: 0 10px 28px -8px rgba(0,0,0,0.5);
+    transition: opacity 0.3s ease, transform 0.3s cubic-bezier(.2,.8,.2,1), background 0.3s;
+  }
+  .reel-card:hover .reel-play {
+    background: rgba(0,0,0,0.7);
+    transform: translate(-50%, -50%) scale(1.06);
+  }
+  .reel-mockup.playing .reel-play {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.7);
+  }
+  .reel-play::after {
+    content: "";
+    width: 0; height: 0;
+    border-left: 16px solid #fff;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    margin-left: 5px;
+  }
+  .reel-sample-tag {
+    position: absolute;
+    bottom: 14px; right: 14px;
+    z-index: 3;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: rgba(255,255,255,0.65);
+    background: rgba(0,0,0,0.35);
+    padding: 5px 10px;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,0.15);
+    pointer-events: none;
+    display: none;
+  }
+  .reel-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 4px;
+  }
+
+  /* ===== Groundbreaking section ===== */
+  .gb-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    margin-bottom: 0;
+    align-items: center;
+  }
+  .gb-card {
+    width: 100%;
+  }
+  .gb-card.invite-card { max-width: 480px; }
+  .gb-card.full-width { max-width: 100%; }
+
+  .gb-card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.5s cubic-bezier(.2,.8,.2,1), box-shadow 0.5s;
+  }
+  .gb-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 40px 80px -25px rgba(247, 201, 72, 0.18);
+  }
+  .gb-card-image {
+    aspect-ratio: 4 / 3;
+    position: relative;
+    overflow: hidden;
+    background: #1a1a1a;
+  }
+  .gb-card.tall .gb-card-image { aspect-ratio: 3 / 4; }
+  /* When the card holds a real image, drop the fixed aspect so the image keeps its natural ratio */
+  .gb-card-image:has(> img) {
+    aspect-ratio: auto;
+    height: auto;
+  }
+  .gb-card-image:has(> img)::after { display: none; }
+  .gb-card-image > img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .gb-card-image::after {
+    content: "SAMPLE IMAGE";
+    position: absolute;
+    bottom: 14px; right: 14px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: rgba(255,255,255,0.65);
+    background: rgba(0,0,0,0.35);
+    padding: 5px 10px;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,0.15);
+  }
+  .gb-card-image .floral { width: 55%; }
+  .gb-card-image .floral svg { width: 100%; height: auto; opacity: 0.55; }
+
+  /* Specific event mockup styles */
+  .gb-invite {
+    width: 100%; height: 100%;
+    background:
+      radial-gradient(circle at 30% 25%, rgba(247, 201, 72, 0.4), transparent 55%),
+      radial-gradient(circle at 70% 80%, rgba(255, 91, 58, 0.3), transparent 50%),
+      linear-gradient(135deg, #1a1006, #08050a);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    padding: 30px;
+    text-align: center;
+    color: var(--ink);
+    gap: 14px;
+  }
+  .gb-invite .invite-eyebrow {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    color: var(--accent-2);
+  }
+  .gb-invite .invite-title {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 28px;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+  }
+  .gb-invite .invite-line {
+    width: 40px; height: 1px;
+    background: var(--accent);
+  }
+  .gb-invite .invite-meta {
+    font-size: 11px;
+    color: var(--ink-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    line-height: 1.7;
+  }
+
+  .gb-poster {
+    width: 100%; height: 100%;
+    background:
+      radial-gradient(circle at 80% 20%, rgba(255, 91, 58, 0.5), transparent 55%),
+      radial-gradient(circle at 20% 80%, rgba(200, 75, 107, 0.4), transparent 55%),
+      linear-gradient(160deg, #2a0a14, #08030a);
+    display: flex; flex-direction: column;
+    justify-content: space-between;
+    padding: 24px;
+    color: #fff;
+  }
+  .gb-poster .poster-top {
+    display: flex; justify-content: space-between;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    color: rgba(255,255,255,0.65);
+  }
+  .gb-poster .poster-headline {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 36px;
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+  }
+  .gb-poster .poster-headline span {
+    display: block;
+    color: var(--accent-2);
+  }
+  .gb-poster .poster-bottom {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    color: rgba(255,255,255,0.7);
+  }
+
+  .gb-signage {
+    width: 100%; height: 100%;
+    background:
+      linear-gradient(135deg, #f4b860 0%, #c47525 100%);
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: center;
+    padding: 28px;
+    text-align: center;
+    color: #1a0a04;
+    gap: 14px;
+  }
+  .gb-signage .sign-mark {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 1;
+  }
+  .gb-signage .sign-sub {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 9.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    opacity: 0.8;
+    line-height: 1.6;
+  }
+  .gb-signage .sign-divider {
+    width: 50px; height: 1px;
+    background: #1a0a04;
+    opacity: 0.4;
+  }
+
+  /* Backdrop creative placeholder */
+  .gb-backdrop {
+    width: 100%; height: 100%;
+    background:
+      radial-gradient(ellipse at 50% 30%, rgba(247, 201, 72, 0.32), transparent 60%),
+      radial-gradient(circle at 12% 88%, rgba(255, 91, 58, 0.22), transparent 55%),
+      radial-gradient(circle at 88% 12%, rgba(200, 75, 107, 0.22), transparent 55%),
+      linear-gradient(160deg, #14080a 0%, #050308 100%);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    padding: 36px 30px;
+    text-align: center;
+    color: #fff;
+    gap: 14px;
+    position: relative;
+  }
+  .gb-backdrop::before,
+  .gb-backdrop::after {
+    content: "";
+    position: absolute;
+    left: 30px; right: 30px;
+    height: 1px;
+    background: rgba(247, 201, 72, 0.35);
+  }
+  .gb-backdrop::before { top: 22px; }
+  .gb-backdrop::after { bottom: 22px; }
+  .gb-backdrop-eyebrow {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.32em;
+    color: var(--accent-2);
+  }
+  .gb-backdrop-mark {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(28px, 3.6vw, 48px);
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+  }
+  .gb-backdrop-mark em { color: var(--accent-2); font-style: italic; }
+  .gb-backdrop-by {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.28em;
+    color: rgba(255,255,255,0.7);
+  }
+  .gb-backdrop-line {
+    width: 36px; height: 1px;
+    background: var(--accent-2);
+  }
+
+  /* Groundbreaking ritual photo placeholder */
+  .gb-ritual {
+    width: 100%; height: 100%;
+    background:
+      radial-gradient(circle at 60% 35%, rgba(247, 201, 72, 0.28), transparent 55%),
+      radial-gradient(circle at 30% 80%, rgba(46, 139, 111, 0.22), transparent 55%),
+      linear-gradient(180deg, #1c1408 0%, #060403 100%);
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 30px;
+    overflow: hidden;
+  }
+  .gb-ritual-floor {
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    height: 32%;
+    background:
+      linear-gradient(180deg, transparent, rgba(0,0,0,0.55) 60%, rgba(0,0,0,0.85) 100%),
+      repeating-linear-gradient(45deg, rgba(255,200,120,0.1) 0 6px, transparent 6px 14px);
+  }
+  .gb-ritual svg.shovel {
+    width: 35%;
+    max-width: 180px;
+    position: relative;
+    z-index: 1;
+    filter: drop-shadow(0 8px 18px rgba(0,0,0,0.5));
+  }
+  .gb-ritual-label {
+    position: absolute;
+    top: 22px; left: 0; right: 0;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    color: rgba(247, 201, 72, 0.85);
+    text-align: center;
+  }
+
+  .gb-card-meta {
+    padding: 14px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .gb-card-meta-label {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--ink);
+  }
+  .gb-card-meta-pill {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--ink-dim);
+    padding: 4px 10px;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+  }
+
+  /* ===== Landing Page ===== */
+  .browser-frame {
+    background: #1a1a1a;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    box-shadow: 0 60px 120px -40px rgba(0,0,0,0.8), 0 30px 60px -25px rgba(255, 91, 58, 0.12);
+  }
+  .browser-bar {
+    background: #222;
+    padding: 12px 18px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    border-bottom: 1px solid var(--line);
+  }
+  .browser-dots {
+    display: flex; gap: 7px;
+  }
+  .browser-dots span {
+    width: 12px; height: 12px;
+    border-radius: 50%;
+    display: block;
+  }
+  .browser-dots span:nth-child(1) { background: #ff5f57; }
+  .browser-dots span:nth-child(2) { background: #febc2e; }
+  .browser-dots span:nth-child(3) { background: #28c840; }
+  .browser-url {
+    flex: 1;
+    background: #111;
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 12px;
+    color: var(--ink-dim);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .browser-url::before {
+    content: "🔒";
+    font-size: 11px;
+    opacity: 0.6;
+  }
+  .browser-body {
+    background: #0a0a0a;
+    min-height: 700px;
+    position: relative;
+    overflow: hidden;
+  }
+  .lp-mockup {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .lp-mockup-placeholder {
+    min-height: 720px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    text-align: center;
+    padding: 60px 30px;
+    background:
+      radial-gradient(circle at 30% 30%, rgba(255, 91, 58, 0.18), transparent 55%),
+      radial-gradient(circle at 70% 70%, rgba(74, 107, 214, 0.18), transparent 55%),
+      linear-gradient(135deg, #14080a, #060309);
+  }
+  .lp-mockup-placeholder .ph-eyebrow {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.28em;
+    color: var(--accent-2);
+  }
+  .lp-mockup-placeholder .ph-title {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 30px;
+    line-height: 1.1;
+    color: var(--ink);
+  }
+  .lp-mockup-placeholder .ph-note {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 12px;
+    color: var(--ink-dim);
+    max-width: 520px;
+    line-height: 1.6;
+  }
+
+  .lp-hero {
+    position: relative;
+    padding: 80px 60px 100px;
+    overflow: hidden;
+  }
+  .lp-hero-bg {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(circle at 20% 30%, rgba(255, 91, 58, 0.25), transparent 50%),
+      radial-gradient(circle at 80% 70%, rgba(74, 107, 214, 0.2), transparent 50%),
+      radial-gradient(circle at 50% 100%, rgba(247, 201, 72, 0.18), transparent 55%);
+  }
+  .lp-hero-inner {
+    position: relative;
+    z-index: 1;
+  }
+  .lp-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 80px;
+  }
+  .lp-nav-logo img {
+    height: 26px;
+    filter: invert(1) brightness(1.05);
+  }
+  .lp-nav-links {
+    display: flex;
+    gap: 28px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--ink-dim);
+  }
+  .lp-nav-cta {
+    padding: 9px 18px;
+    border: 1px solid var(--accent);
+    border-radius: 999px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+  }
+  .lp-eyebrow {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    color: var(--ink-dim);
+    margin-bottom: 24px;
+    display: inline-flex;
+    gap: 10px;
+    align-items: center;
+  }
+  .lp-eyebrow::before {
+    content: "";
+    width: 24px; height: 1px;
+    background: var(--accent);
+  }
+  .lp-hero-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-size: clamp(44px, 7vw, 96px);
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    margin-bottom: 28px;
+    max-width: 900px;
+  }
+  .lp-hero-title em {
+    font-style: italic;
+    color: var(--accent);
+  }
+  .lp-hero-sub {
+    font-size: 16px;
+    color: var(--ink-dim);
+    max-width: 560px;
+    margin-bottom: 36px;
+  }
+  .lp-hero-actions {
+    display: flex; gap: 14px;
+    flex-wrap: wrap;
+  }
+  .lp-btn {
+    padding: 14px 28px;
+    border-radius: 999px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    display: inline-block;
+  }
+  .lp-btn.primary {
+    background: var(--accent);
+    color: #fff;
+  }
+  .lp-btn.ghost {
+    border: 1px solid var(--line);
+    color: var(--ink);
+  }
+
+  .lp-feature-strip {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    padding: 40px 60px;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    background: var(--bg-soft);
+  }
+  .lp-feature-strip dt {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--ink-dim);
+    margin-bottom: 6px;
+  }
+  .lp-feature-strip dd {
+    font-family: 'Fraunces', serif;
+    font-size: 16px;
+    color: var(--ink);
+  }
+  .lp-feature-strip dd em { color: var(--accent-2); font-style: italic; }
+
+  .lp-gallery {
+    padding: 60px 60px 80px;
+  }
+  .lp-gallery-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 36px;
+    margin-bottom: 30px;
+    color: var(--ink);
+  }
+  .lp-gallery-title em { color: var(--accent); }
+  .lp-gallery-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 16px;
+  }
+  .lp-gallery-grid > .lp-tile {
+    aspect-ratio: 16 / 10;
+  }
+  .lp-gallery-side {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .lp-gallery-side .lp-tile {
+    aspect-ratio: 4 / 3;
+  }
+  .lp-tile {
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid var(--line);
+  }
+  .lp-tile.t1 {
+    background:
+      radial-gradient(circle at 30% 30%, rgba(255, 91, 58, 0.5), transparent 55%),
+      radial-gradient(circle at 70% 80%, rgba(247, 201, 72, 0.4), transparent 50%),
+      linear-gradient(135deg, #1a0a14, #050208);
+  }
+  .lp-tile.t2 {
+    background:
+      radial-gradient(circle at 60% 30%, rgba(46, 139, 111, 0.55), transparent 55%),
+      linear-gradient(135deg, #06140d, #03070a);
+  }
+  .lp-tile.t3 {
+    background:
+      radial-gradient(circle at 40% 60%, rgba(200, 75, 107, 0.55), transparent 55%),
+      linear-gradient(135deg, #1a0814, #04020a);
+  }
+  .lp-tile::after {
+    content: "SAMPLE";
+    position: absolute;
+    bottom: 12px; right: 12px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: rgba(255,255,255,0.6);
+    background: rgba(0,0,0,0.35);
+    padding: 4px 9px;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+  .lp-tile .floral {
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .lp-tile .floral svg { width: 35%; height: auto; opacity: 0.55; }
+
+  .lp-section-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    padding: 60px 60px 80px;
+    align-items: center;
+    border-top: 1px solid var(--line);
+  }
+  .lp-section-row h3 {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-size: 42px;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    margin-bottom: 20px;
+  }
+  .lp-section-row h3 em { font-style: italic; color: var(--accent); }
+  .lp-section-row p {
+    color: var(--ink-dim);
+    font-size: 15px;
+    line-height: 1.7;
+  }
+  .lp-section-row .lp-tile { aspect-ratio: 4 / 5; }
+
+  .lp-cta {
+    padding: 80px 60px;
+    text-align: center;
+    border-top: 1px solid var(--line);
+    background:
+      radial-gradient(circle at 50% 100%, rgba(255, 91, 58, 0.18), transparent 60%),
+      var(--bg-soft);
+  }
+  .lp-cta h3 {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: clamp(36px, 5vw, 64px);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    margin-bottom: 20px;
+  }
+  .lp-cta h3 em { color: var(--accent); }
+  .lp-cta p {
+    color: var(--ink-dim);
+    margin-bottom: 30px;
+    max-width: 500px;
+    margin-left: auto; margin-right: auto;
+  }
+
+  .lp-footer {
+    padding: 30px 60px;
+    border-top: 1px solid var(--line);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--ink-dim);
+  }
+
+  @media (max-width: 900px) {
+    .lp-hero { padding: 50px 30px 70px; }
+    .lp-nav { margin-bottom: 50px; }
+    .lp-nav-links { display: none; }
+    .lp-feature-strip { grid-template-columns: repeat(2, 1fr); padding: 30px; }
+    .lp-gallery, .lp-section-row, .lp-cta { padding: 50px 30px; }
+    .lp-gallery-grid { grid-template-columns: 1fr; }
+    .lp-section-row { grid-template-columns: 1fr; }
+    .lp-footer { flex-direction: column; gap: 12px; padding: 20px 30px; }
+  }
+
+  /* Caption note */
+  .caption-note {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--ink-dim);
+    margin-top: 8px;
+    padding-left: 14px;
+    border-left: 2px solid var(--accent);
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== Nav ===== -->
+<!-- ===== Hero ===== -->
+<header class="hero" id="top">
+  <div class="hero-bg"></div>
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Pre-Launch Campaign Marketing Plan · 2026</div>
+    <div class="hero-logo">
+      <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAxNzg2LjMzIDg0My41MiI+CiAgPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDMwLjMuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDIuMS4zIEJ1aWxkIDE4MikgIC0tPgogIDxkZWZzPgogICAgPHN0eWxlPgogICAgICAuc3QwLCAuc3QxIHsKICAgICAgICBmaWxsOiAjMjMxZjIwOwogICAgICB9CgogICAgICAuc3QxIHsKICAgICAgICBmaWxsLXJ1bGU6IGV2ZW5vZGQ7CiAgICAgIH0KICAgIDwvc3R5bGU+CiAgPC9kZWZzPgogIDxnPgogICAgPHBhdGggY2xhc3M9InN0MSIgZD0iTTk5My44MSwyMDkuNjFjLTEuMzMtMS42Ny02LjEtMS4wNS0xMC4yMS0xLjE4bC0xMS45MS0uMTZjLTExLjkxLjA2LTIzLjgzLS4yOC0zNS43My0uMjUtNC45NC4wMi0zMi43My41MS0zNS0uNjMsMTUuMjEtMS42MSwxNS4xNi0xLjM4LDMwLjM3LTEuNDgsMjMuODItLjIyLDM3LjQyLS44Miw2Mi41Mi0uODQtMS4wOC0yLjQxLTIyLjY4LTE2LjYtMjYuNDctMTkuMzFsLTkuMTktNi4yOWMtLjgtMS41NCwzLjQzLTM3LjY5LDMuOTItNDIuMzYtNi45Ny4yOC0xNC42NSwxLjcxLTIxLjU1LDIuNjMtNy4xMi45NS0xNC42MiwyLjA3LTIxLjQ3LDIuOTZsLTE4LjktMjcuN2MtLjU4LS45My01LjM1LTguNjItNi42OS04Ljc2LS44Miw0LjkzLTEuMjYsNzYuNi0xLjIyLDc5LjE4LS4wMSwzLjY1LjI4LDEwLjczLS41MSwxMy44Ni0uNjctNy40LS44LTMzLjM3LS44Ni00Mi4zMS0uMS0xNC41NS0uNjMtMjkuMDUtLjYyLTQzLjY3LDAtMi40NC4yMy02LjA5LS42Ni03LjkyLTEuNzEsMS4xMy0yMS44NiwzMC41OC0yNi40NiwzNS43NGwtNDQuMi01LjIyLDMuMTIsMjIuNDVjLjYzLDQuNjQsMy4xNCwxOS4zNiwzLjA0LDIyLjc4LTQuNjYsNC4wMi0zMC4yNCwyMS43My0zMi43NSwyNC4xMyw1Ljc3LS40MSwzOC4xOC40Niw0Ni42Mi42LDYuNDYuMSw0Mi44My0uMTQsNDUuNjIsMS43NC03LjU2LDEuNjctNTYuNTkuMTMtNjkuNDIuNjYtNC4xLjAyLTcuODkuMTUtMTEuOS4zLTMuOTYuMTUtNy43OC45Ni0xMS40LjcsNC45OCw1LjQsMjQuMDQsMTYuOTUsMzEuMzEsMjIuNDMsNC41MiwzLjQxLDMuNiwxLjY0LDIuNyw4LjgtMS40NiwxMS41Ni00LjAxLDIzLjc5LTUuMDksMzUuMjcsMTIuMDgtMS44NCwzMy4wNi0zLjc1LDQzLjM1LTUuOTNsMTIuNTUsMTYuODdjMy45NSw1LjYzLDguMzYsMTEuNDcsMTIuNTQsMTYuNzksMi40Ny00LjQyLDEuOTktMTIuNjksMi4wNi0xOC44bC4zMS02Ny41YzAtMS41OS0uMTktMi45Ny42MS00LjA5LDEuMDMsMTMuNzIsMS4wNCwyNy4zNiwxLjAzLDQxLjE1LS4wMywxNi42LjA3LDMyLjc2LjcsNDkuMjcsMS4yNi0xLjAzLDQuNTgtNS40Niw1LjkyLTcuMjYsMS44OC0yLjUyLDMuODQtNS4xNCw1Ljg0LTcuNzUsMS45OC0yLjU5LDMuODQtNC45Niw1Ljc4LTcuNDUsOS41OC0xMi4yOCw2LjQ3LTExLjU5LDE1LjM1LTEwLjQ1bDI0LjMxLDIuODVjMy40MS4zOSw5LjI1LjU2LDEyLjI0LDEuMjktLjUyLTEyLjM2LTQuNTYtMjkuNDYtNC42LTM5LjQxbDE3LjczLTEyLjY1YzMuMjEtMi4zNiwxNS44LTEwLjg0LDE3LjI4LTEzLjA3Wk04MDAuMTgsMjAyLjUzYy44MS0xLjA4LDE0LjY2LTEwLjQsMTYuNzMtMTEuNzgsMi44Mi0xLjg3LDUuNTItMy45MSw4LjMtNS45MiwyLjgzLTIuMDUsMi4yNC0uOTIsOS42MiwxLjgxLDcuMTgsMi42NiwxMy41Niw1LjQzLDIwLjM3LDguMDdsMjAuNTMsOC4yOS03NS41NS0uNDdaTTg0Mi4yNywxODYuMTRsLTEzLjUxLTUuMjctNS42NS0zNy45NywyMi40MiwyMS43OWMxLjI2LDEuMTgsMi4yOSwyLjU0LDMuNTUsMy43M2wxMS4zNSwxMS4xNGMxLjE5LDEuMjksMi41MywyLjIyLDMuNzksMy41bDE2Ljg1LDE2LjU0Yy40My4zOS42Mi41MywxLjAzLjk1LjY5LjY5LjQ5LjQsMSwxLjE4LTUuOS0xLjMtMzIuOTMtMTIuNTgtNDAuODItMTUuNTlaTTg3Ny45NSwxOTEuMTVjLTEuMi0xLjMyLTIuNjktMi4zMi0zLjgzLTMuNDUtMS4zLTEuMjctMi4zOS0yLjMyLTMuNjktMy42bC0xNC44Ny0xNC41OGMtMi42My0yLjU0LTQuODYtNC44OC03LjMxLTcuMjVsLTE4LjY0LTE4LjA3Yy0xLjMxLTEuNDctMi4zMy0xLjg0LTMuNzctMy43NSw0LjEzLS4wOCwzMS44MiwzLjAxLDM3LjUxLDMuNzZsNS41OCwxMy4yNmMzLjE3LDguNTMsNy43MSwxOC4xNSwxMS4xMSwyNi45NC44OSwyLjMsMS43Niw0LjUxLDIuNzcsNi44Mi44NCwxLjkxLDIuMyw0Ljg0LDIuNzcsNi42NS0xLjQyLS40OC02LjI4LTUuMjUtNy42NC02Ljc0Wk04MjYuMTMsMjMwLjA3Yy0yLjc5LTEuOTgtNS44NS0zLjc5LTguNzEtNS44NWwtMTIuODktOC45NWMtMS40Ni0uOTgtMy4wNy0xLjg0LTQuMTgtMy4wOGw3Ni43OS0uNzZjLS42NS43Ny0zLjY5LDEuNTMtNC44MSwxLjk5bC0zNS45NywxNC45OGMtMS43Ny43Mi0zLjUsMS4zNC01LjIsMi4wOS0yLjkzLDEuMy0yLjc0LDEuMi01LjAzLS40M1pNODI0LjkyLDI2OS4xNmw0LjU5LTMxLjA0Yy41My0zLjQ1LDAtMy4yLDIuODEtNC41LDMuMzctMS41Niw2LjcxLTIuNiwxMC4xMS00LjExLDkuNzYtNC4zMiwyMC43Ni04LjI2LDMwLjMtMTIuMzcsMS43Ni0uNzYsOC42Ni0zLjY2LDEwLjE1LTMuOC0zLjAyLDIuMTMtMTQuMywxMy44OS0xNy45MSwxNy4yMWwtMTAuOSwxMC41OWMtMS4zLDEuMzctMi4zOSwyLjIyLTMuNTYsMy4zOWwtMjQuODgsMjQuMTNjLS42LjUxLjIxLjAzLS43LjVaTTg1OC44NywyNjcuMTJsLTMwLjY1LDQuNTFjLjE1LS42Ni4wOC0uMzYuNTItLjg5bDMxLjIxLTI5Ljk5YzIuNzktMi42MSwyMy43Ni0yMy4xMiwyNS4zNy0yNC4wMS0uNjUsMi41OS0xNC4yMiwzMy40LTE2LjcsMzkuMzEtLjcyLDEuNzItMS40MSwzLjI3LTIuMTEsNC44My0yLjgyLDYuMy0xLjM3LDUuMy03LjY0LDYuMjRaTTg4Ny42MSwyOTUuNTljLTEuNjItLjk3LTE1LjktMjAuOTQtMTguODgtMjUuMDktMi41Ni0zLjU2LTIuNDktMS4zNywxLjE0LTkuOTIsMS40Ny0zLjQ2LDIuODctNi44MSw0LjM2LTEwLjE5LDEuNjYtMy43NiwxMi44MS0yOS43NCwxMy43Ny0zMC44NGwtLjM4LDc2LjAzWk04NzguNTksMTcyLjMyYy0zLjI1LTguMDQtOC4zNy0xOS42MS0xMS4yNC0yNy40Ny0xLjIzLTMuMzYtLjg0LTIuNzUuOTMtNS4yOGwxOC43My0yNi43OWMuMTEtLjA5LjE3LS4xNS4yMS0uMjEtLjIxLS4xNC4xNy0uMjMsMCwwLC4wNC4wMi4wOS4wNS4xNi4wN2wuNjQsODEuNDljLTEuMDYtMS4xNy04LjI1LTE4Ljg4LTkuNDQtMjEuODJaTTk2My4xMiwxODYuMzdjMy42LDIuNDgsMjIuMDEsMTQuNjksMjMuMDgsMTUuODlsLTgxLjA5Ljg1YzUuNTMtMi4wMyw0Mi41OC0xOC4xMSw0OC41Ni0yMC44MywzLjE3LTEuNDUsMy41MywwLDkuNDUsNC4wOVpNOTU0LjI0LDE3OC41OWMtOC45MiwzLjgxLTE4LjA0LDcuNTgtMjcuMDcsMTEuNThsLTIwLjM1LDguNzdjLTIuMTYsMS4wMy01LjA1LDEuODctNi44OCwyLjkybDU4LjgzLTU4Ljg0Yy0xLjMyLDguNzMtMi45MSwyOC42Mi00LjUzLDM1LjU3Wk05MTkuMDksMTQ1Ljc1YzcuNi0uMTksMjguMDYtNS4wMiwzNi4zNC00Ljk3bC03LjA3LDcuMDdjLTIuMzksMi4yOS00LjY4LDUuMDQtNy4wMyw3LjItMS4yOCwxLjE3LTIuMiwyLjI5LTMuNDMsMy41MS0xLjI4LDEuMjctMi40NiwyLjI5LTMuNzEsMy41OGwtMTguMDEsMTguMDVjLTIuNDgsMi42LTE3LjExLDE3LjEtMTguMzgsMTcuNzkuNzUtMi4wMiwxLjg3LTQuMTYsMi42OS02LjM0LjgzLTIuMTksMS42Ny00LjM5LDIuNjItNi42NCw0LjYxLTEwLjg1LDguNzItMjIsMTMuMzMtMzIuNjYuODktMi4wNSwxLjg4LTQuNDUsMi42NC02LjU5Wk04OTYuMjYsMTE0LjAxYzEuMjIuODYsMTAuNDEsMTUuNDIsMTIuMjQsMTguMTMsMS45NywyLjkzLDMuOTcsNi4yNyw1Ljk0LDkuMjcsMS4zNCwyLjAzLDIuNDgsMi4yOSwxLjMyLDQuOTUtLjc5LDEuODItMS42NiwzLjcyLTIuMzksNS41NGwtOC43OCwyMS42N2MtMS41NSwzLjQ5LTIuOTMsNy4xNC00LjQ2LDEwLjc1LTEuMDEsMi4zNy0zLjcyLDkuMTQtNC45MSwxMC43bDEuMDQtODEuMDFaTTkxNS44OSwyNzAuMjNjLTQuNTEsNi4yMy0xMC44LDE1LjM0LTE1LjY1LDIxLjA3LTEuMzcsMS42MS0yLjM5LDMuNjEtMy42MywzLjkzLS4xOS0xOC44OS4yNC0zOC42Mi0uMTYtNTcuMjEtLjEzLTUuODItLjU4LTEzLjE3LS4yLTE4Ljg1LDEuODgsMi42NCwzLjI5LDYuNjMsNC42OSw5Ljg2bDE1LjI5LDM1Ljk5YzEuMTYsMi45MSwxLjMzLDIuOS0uMzQsNS4yMVpNOTI1LjM0LDI2Ny40OWMtMi4xNy0uMjUtNC4yNi4wMy01LjI0LTEuNzEtLjcyLTEuMjgtMS41MS0zLjQyLTIuMTEtNC44M2wtNi4xMi0xNC43MmMtMS4zOS0zLjM5LTIuNjMtNi41NC00LjEzLTkuNzhsLTYuMTUtMTQuNjdjLS42NC0xLjU2LTEuMzktMy42Mi0yLjAzLTQuOSwyLjc0LDEuNjgsMzkuMzIsMzcuMTcsNDIuODEsNDAuNTIsMi40MiwyLjMzLDQuNTQsNC4wNCw3LjE0LDYuNzcsMi4wNCwyLjE0LDYuMTgsNS41Miw2Ljk0LDYuOTQtOS44OC0uOS0yMS4wMS0yLjQ2LTMxLjEyLTMuNjFaTTk1OS42MywyNjkuMTlsLTE0LjI3LTEzLjQ2Yy00Ljg1LTQuODQtOS40OC05LjE5LTE0LjMtMTMuODFsLTIxLjM0LTIwLjY3Yy0xLjIyLTEuMjItMi40Mi0yLjA4LTMuNi0zLjM0LS42Ny0uNzEtMS4xMS0xLjI0LTEuNzUtMS44OWwtMS44Ni0xLjkzYzQuMjQsMS4wOSw5LjU1LDMuNTQsMTMuNTIsNS4xNyw0LjQ4LDEuODQsOC43NCwzLjYsMTMuMDQsNS41LDQuNDEsMS45NSw4LjUxLDMuNjUsMTMuMTEsNS40MSw0LjUsMS43Myw4Ljc5LDMuNjcsMTMuMTIsNS4zOWw0LjM0LDMzLjY0Wk05NDguOTksMjI5LjYyYy03LjIzLTMuMDYtMTQuNDYtNi4wMS0yMS43OC05LTEuNTQtLjYzLTIxLTguNjItMjEuNzgtOS4zN2w4MS4xMi4yOWMtLjk0LDEuNjctMjMuMTgsMTYuOC0yNi44NCwxOS40NS0zLjAzLDIuMTktMS45LDIuMzctMTAuNzEtMS4zN1oiLz4KICAgIDxwYXRoIGNsYXNzPSJzdDEiIGQ9Ik0xMzAwLjQ3LDQxMS41N2MyLjI1LTUuODksMy40LTE1LjU5LDIuNTctMjMuMDMtLjk4LTguOC0yLjkxLTEzLjI4LTYuODEtMTkuMzEtMy4wNy00Ljc1LTguNDQtOC41OS0xNC4zOC0xMS40LTEyLjk5LTYuMTYtMzIuMzctNC45Ni00Ni44NS01LjE3LTUuNC0uMDgtMTYuNzQtLjQxLTIyLjM2LS4wOS0yLjAzLjEyLTEuNjgtLjQtMi4wNSwxLjE0LjM1LjIyLS4wNy4xLjY4LjIzLjQuMDcuODEuMDgsMS4yMi4wOSwxNC4zMy40NCwxMS4xNiwxMS4yMywxMS4zNiwyNC40OS4zNywyNC41NiwwLDUxLjIuMTEsNzYuMDkuMDIsNC4yOS4zNiwxNC45OS0uOTQsMTguMTMtMi44Niw2Ljg3LTEwLjg1LDUuNzgtMTEuNzcsNi4wOS0uOS4zMS0uMzUtLjMtLjY5LjYtLjAyLDEuMDQuMDIuOCwzLjU5Ljg0bDE0LjI0LjAzYzIuODEuMDcsMTYuODcuMjgsMTguNDUtLjIybC4wOC0xLjMyYy0xMy40NC0uMDgtMTMuMjMtNi41NS0xMy4yMi0xNS44OC4wMS05LjguMDYtMTkuNjEuMDMtMjkuNGwyNC43Ny0uMTYsNi4yMiwxNi43M2MzLjU4LDkuMzQsMTAuNTcsMjIuNTcsMTguOTgsMjcuMzMsNi4xMSwzLjQ2LDEwLjQ1LDIuODksMTcuMTcsMy4wMi4xLDAsMS4yOSwwLDEuMywwLDEtLjE5LjY0LjIzLjkxLS42NC0uMDEtMS4xNC0xLjAyLS42NS00LjIzLS42NS00Ljg5LDAtNy44My0uNDgtMTEuMTktNC4wNC00Ljg4LTUuMTctMTAuODUtMjAuMzYtMTMuMzYtMjcuNjUtMS4xMi0zLjI0LTQuNzktMTIuNjMtNS4yMS0xNS4yOSwxMi42NS0uNzIsMjYuNTgtOC4wMSwzMS4zOC0yMC41N1pNMTI4OS4zNiw0MTQuMDNjLTIuNzIsNS43OC02LjM1LDkuNDYtMTEuNzcsMTIuNzMtNS4zNSwzLjIzLTEyLjIzLDQuNDItMTkuNTgsNS4yMS00LjI5LjQ2LTIwLjIuNjMtMjQuMjcuMDNsLjExLTc3Ljk4YzIwLjA5LS4xOSw0NC44Ny0xLjczLDU0Ljg0LDE5LjEyLDUuNjMsMTEuNzcsNi4yMiwyOS4wNi42Nyw0MC44OFoiLz4KICAgIDxwYXRoIGNsYXNzPSJzdDEiIGQ9Ik02NzIuNzMsNDMyLjA3YzExLjUyLTIuMjQsMjEuMTgtOC4xOSwyNS44OC0xOS40NCw1LjUtMTMuMTcsMy4yNi0zMS42LTMuNjMtNDEuODktNy4wMy0xMC41MS0xOC4zMS0xNS4xNS0zNC43Mi0xNi44NC04LjgyLS45MS00OS4wMy4wMi01MS4xNC0uNjUtLjI3LDEuOTYtLjk5LDEuMTQsMi44NywxLjUxLDEyLjY2LDEuMjIsMTAuMjYsMTEuMjgsMTAuMjYsMjMuMnY3Ni40M2MwLDE0LjM1LDIuOTksMjUuMjEtMTMuMjYsMjUuMThsLS4xNiwxLjQxaDM2LjQ5cy4wOC0xLjQ0LjA4LTEuNDRjLTEzLjgxLjEyLTEzLjMxLTYuOTctMTMuMy0xNS44OCwwLTkuMjQuNS0yMC4xLS4wNi0yOS4xNGwyNC42MS0uMjhjMi4zMiw1LjA3LDQuMDEsMTEuMTYsNi4zMywxNi40Niw0LjQ0LDEwLjE2LDkuMzIsMjEuMzksMTkuMDEsMjcuMzEsMi4yNSwxLjM4LDUuMzEsMi42Niw4LjQ4LDMuMSw0LjE4LjU4LDcuMDctLjExLDEwLjg1LjA5bC0uMDItMS42NmMtMi4zMy44NC02LjkyLjU5LTkuMjUsMC03LjMtMS44Ny0xMC41OS05Ljk2LTEzLjY2LTE2Ljc4LTEuNjktMy43NS0xMC4xNS0yNS4zNC0xMC44NS0yOS41NGwyLjM2LS42NmMuOTYtLjE2LDEuODItLjI5LDIuODItLjQ4Wk02MzIuMTQsNDMyLjg3bC4wNS03OC4zNmM2LjE3LjU4LDE0LjUxLS40OCwyNC4xOC41NSw3Ljg0Ljg0LDEyLjgyLDIuNjEsMTguNjIsNS44Nyw5LjU2LDUuMzcsMTYuMzcsMTcuMzUsMTYuNjYsMzIuOS4zMSwxNi42Mi01LjQzLDI3LjgxLTE1Ljg1LDMzLjcxLTExLjE2LDYuMzItMjguNTcsNS43Ni00My42Nyw1LjMzWiIvPgogICAgPHBhdGggY2xhc3M9InN0MSIgZD0iTTEzNzAuNTUsMzUyLjZsLTQzLjI2LjEzLS4wNiwxLjNjNi4yOC4wMiwxMS4wNywxLjUzLDEyLjUyLDYuMzMuOTYsMy4xNy41MSw1MSwuNDUsNTYuMjMtLjA3LDYuNDMuNjksNTIuNDEtLjc0LDU2LjI2LTEuNjksNC41My02LjIxLDUuODgtMTAuNjIsNS45My0xLjc2LjAyLTEuNTItLjMyLTEuOTcuNjguMzkuOS0uMTkuMzEuNzMuNi4xMy4wNCwxLjA2LjA5LDEuMjMuMS44OS4wMSwxLjc4LS4wMiwyLjY4LDAsMTIuODkuMjUsMjUuNTgtLjA2LDM4LjM4LS4wMywxMy45LjAzLDI3LjQ0LTEuMzQsMzcuOTUtNi4wMywyMC4xMi04Ljk4LDMwLjE3LTI4LjAyLDMwLjIxLTU3LjQ4LjA2LTQ2LjUyLTI3LjcyLTY0LjAyLTY3LjUtNjMuOThaTTE0MjguMjksNDIwLjIyYy0xLjEzLDguNi0uMjgsMTIuMDEtMy4wMywyMi4zLTMuMTgsMTEuOS0xMC4xOSwyMy45NS0yMS40NiwyOS40OS02LjYxLDMuMjUtMTEuMTksNS4yNi0xOS4zOSw2LjEzLTUuNjUuNi0xOC42MSwxLjQxLTI0LjM1LjUzLTkuMDktMS4zOC0xMC4wNS01LjgxLTEwLjAzLTE1LjQzLDAtNC41Ni0uNDUtOTYuNDUuMzYtMTAxLjIsMS40My04LjM4LDExLjIyLTguMTMsMTcuNTEtOC4wNywxNC40OS4xMywyOS4xNy45OSw0MC44Nyw5Ljg0LDEwLjExLDcuNjUsMTUuOTcsMTkuNzgsMTcuOTksMzIuOTYuOTksNi40NCwyLjQxLDE2Ljc0LDEuNTIsMjMuNDZaIi8+CiAgICA8cGF0aCBjbGFzcz0ic3QxIiBkPSJNNTk1Ljc4LDM1My40Yy0xLjE0LS4wMi0yLjEzLS4wNS0zLjI5LS4wNi0xLjgzLS4wMS0yMC40My0uMjktMjEuNDkuNDYuMTcsMS4xNy0uMjMuNzIsMy42Ljg2LDMuMDIuMTIsNi4zOS4yMyw4Ljg1LDEuODksMS41LDEuMDEsMS42NywxLjQzLDEuNjksMy44NWwuMDgsNjQuODZjLS4wNCwxNi44NS4xNSwyNC40Ni04LjgyLDM0LjU1LTExLjAxLDEyLjM4LTMzLjQzLDE1LjU1LTQ5LjIsOS4yMy05Ljc1LTMuOTEtMTcuOTEtMTEuNTgtMjEuMTQtMjEuODctMS45MS02LjEtMS42My0xMy4yOS0xLjY0LTIwLjI1LS4wMS03LjQzLS43MS01OS4yOC4xMS02NC4xMy41LTIuOTksMi4zMy01LjA2LDQuNjEtNi4zLDMuOTItMi4xMiw3LjUzLTEuNiw4LjUyLTIuMzUtLjQ1LTEuMDYuMDUtLjY2LTEuNTUtLjc1bC0zMC40OC4wN2MtMS4yMywwLTMuNjctLjI4LTQuNTMuMzQuNDEsMS40MS41NS41LDQuMzMsMS4xOSwxLjcyLjMyLDMuMjEuODEsNC4zOSwxLjU3LDIuNDksMS41OSwzLjkyLDMuNDEsNC40OSw3LjA4Ljg3LDUuNTcuMjMsMTYuNjUuMjUsMjIuOTEuMDUsMTUuMzMtLjI0LDMxLjEzLjI1LDQ2LjM0LjI2LDguMDYuNTIsMTMuNDMsMi45NiwyMC4yNSwxMS4yNiwzMS40Miw1NC42MSwzNi42Nyw3Ni4wNCwxNS4zMSw4LjIxLTguMTgsMTIuMzYtMTguMDQsMTIuNTQtMzMuOTNsLjE0LTY5LjgxYy4wMi00LjY1LjE3LTYuMzMsMy4zLTguMzIsMS4xNS0uNzMsMi43Mi0xLjI2LDQuNDQtMS41M2wzLjg4LS40Yy45OC0uMjQuNjMuMi45Ny0uNjctLjgtLjY2LS45My0uMzctMy4yOC0uNDFaIi8+CiAgICA8cGF0aCBjbGFzcz0ic3QxIiBkPSJNNDcyLjc5LDQ1My4xNWMtMi4xMSw1LjEtMy41OSw5Ljk3LTYuNDIsMTUuMDgtMi42NSw0LjgtNS4xNSw5LjAyLTEwLjYsMTAuOTEtMi42OS45My0zLjI2LjU5LTYuMjIuNTQtOS40Mi0uMTQtMTkuMDMtLjE2LTI4LjQ1LS4wNi05LjU0LjEtMTkuMjYtLjI4LTI4Ljc3LS4wNHYtNzMuNDljNC41OC0uNDUsMzIuNzEtLjA4LDM5LjY5LS4wNiw0LjgxLjAyLDE1LjQtLjc1LDE4Ljk3Ljk0LDQuMTcsMS45Nyw0Ljk3LDQuNjgsNS45Nyw4LjkxLjg1LDMuNTctLjEsMi45NCwxLjM3LDMuNTlsLS4yNS0yNy4yMWMtLjE1LS43MywwLS4zMy0uMjUtLjcxLTEuNDEuNDctLjIyLTEuMDktMS4wOSwzLjUyLS43MywzLjg2LTIuMzgsNy4zLTYuMDcsOC44MS0zLjg3LDEuNTktMTQuMDIsMS4wMi0xOC45Ny45Ni0xMi44LS4xNi0yNi43LjU5LTM5LjMyLS4xNGwtLjA2LTQ5Ljk4YzguMzEuMTUsMTYuNzYtLjI4LDI1LjE1LS4xOSw4LjQ3LjA5LDE3LS4xMiwyNS40OC0uMDIsMTMuNjUuMTYsMTcuNDkuNzgsMjIuNzUsMTUuMjVsMi40Miw3LjJjLjQzLDEuNzEtLjAyLDEuNjQsMS40OSwxLjU0bC03LjA2LTI1LjM0Yy04Ljg2Ljg4LTU3LjcyLjIyLTcwLjU2LjIybC0yMC44OS4wNmMtMi4wNy4wNy0xLjQ3LS4zOC0xLjc4LDEuMTUsMi4wNS43MSw0LjYuMDQsNy42NywxLjMzLDcuMzcsMy4xLDUuNTgsMTIuOTQsNS40OCwyMy4wNS0uMTMsMTIuNjcuMDgsMjUuMzctLjAxLDM4LjA1LS4wNSw2LjY3LjczLDUxLjY0LS43Miw1NS45MS0uNzYsMi4yNC0yLjIzLDQuMTMtNC4zNiw1LjIzLTIuNzcsMS40My00LjU4LDEuNDEtOC4yLDEuNDFsLjE2LDEuNDVjLjE1LS4wNSw4OS41Mi0uNSw5NS4xMS4xMiwxLjA5LTIuMDcsNC40Ni0xMi45NSw1LjQ2LTE1Ljk5LDEuNzktNS40MSwzLjY0LTEwLjg1LDUuNC0xNi40NS0xLjYyLjMyLS45OC43NS0yLjUyLDQuNDdaIi8+CiAgICA8cGF0aCBjbGFzcz0ic3QxIiBkPSJNMjQxLjYzLDM1My4yOWwtOTEuMjEuMTZjLTEuOSwwLTEuNjctLjM2LTEuODMsMS4wMiwxLjU3LDEuMDcsOS4zMi0uOTgsMTIuMjUsNi40NywxLjMxLDMuMzMuNzcsMTQuMzMuNzQsMTguNjctLjExLDEyLjc5LS4wNSwyNS41OC0uMTIsMzguMzgtLjA3LDEyLjY2LjI4LDI1LjQyLjE1LDM4LjA1LS4wNiw1LjY4LjgxLDEzLjQzLTEuMzcsMTguMDUtMi44Myw2LTguODksNS4zNC0xMC43OSw1LjczLTEuNjQuMzQtLjU0LS42Ny0xLjIyLDEuMjdsMzUuMTUtLjFjMS44NC0uMjIsMS4yOS4xNSwxLjQyLTEuMTMtMi40OS0uOTktOS45My45MS0xMi42OS02Ljc2LTEuMzQtMy43Mi0uNzctMTQuMzEtLjc4LTE5LjA1LS4wMy0xMy4yMy4xOC0yNi40Ni0uMDItMzkuNjksMTMuMDItLjI1LDI2LjMzLS4xMiwzOS4zNy0uMDYsNC45Ny4wMiwxNS4yMy0uNjQsMTkuMTEuNzgsNC4zMSwxLjU3LDYuMTEsNi40NSw2LjMzLDEwLjg3LjA5LDEuNzctLjM1LDEuNTMuNywxLjkxLjgxLTEuMzIuMzMtMTEuNjYuMzQtMTQuMThsLjAzLTEyLjk0Yy0uMjItMi4xNi4zOC0uODQtLjctMS4zNi0uNS44My0uNTcsMTAuMzgtNi44MSwxMi43OC0zLjY1LDEuNC0zMi4zOS44Ni0zOC41MS44Ni00LjA2LDAtMTYuNjQuNDktMTkuNTktLjJsLS4wOS01Ny44OWMyLjY0LS41Niw5LjI1LS4xNSwxMi40MS0uMjFsMzcuNzEtLjE2YzE1Ljc0LjA0LDE3LjQ3LDEuMzMsMjIuOTksMTQuOTYuNjUsMS42MSwxLjEyLDIuOTIsMS42Nyw0LjYuNCwxLjIzLjkyLDMuODcsMS44MSw0Ljc5LjgxLTEuMTktMi41Mi0xMS40Ni0yLjg5LTEyLjYzLTEuMjktNC4xLTIuNjQtOC43OS0zLjU1LTEzWiIvPgogICAgPHBhdGggY2xhc3M9InN0MSIgZD0iTTExODYuOTgsNDc5LjExYy0zLjUzLTIuMTQtNy4zOCwyLjc5LTEyLjk1LTEwLjE2bC02LjY4LTE2LjgxYy00LjItMTEuMTMtOC41OS0yMi40Mi0xMy4wOS0zMy41Ni00LjYxLTExLjQtOC43LTIyLjYtMTMuMDctMzMuNTktMS4yLTMuMDItMTIuMDQtMzEuMTgtMTMuMzgtMzMuMjdsLS4yNy40Yy0xLjU2LDIuNzUtMTEuMTMsMzAuMjYtMTEuOTcsMzIuNy0zLjgxLDEwLjk0LTcuOTYsMjIuMzQtMTEuOTksMzMuNjctMS4wMiwyLjg4LTIuMDUsNS4xNC0zLjA0LDguMThsLTguOTksMjUuNDRjLTIuMDgsNS41NS02LjcyLDIxLjIyLTkuODcsMjQuMjItMi40MSwyLjI5LTUuMDYsMi4zNS05LjEzLDIuNDhsLS4yLDEuNDljMS4zNy0uMzMsMTEuMjcuMDcsMTMuNzYuMDcsMi40NCwwLDEyLjcxLjE4LDE0LjE3LS4yN2wuMzQtMS4yNmMtNS4xMy0uMzEtMTUuNDQuNjMtMTUuMjYtNS4zNS4wNy0yLjEzLDQuNDUtMTIuNzYsNS4yOS0xNS4zLDMuNDMtMTAuMzgsNy4xOC0xOS44NCwxMC43My0zMC4zLDQuMDcsMS41OSw1LjM1LDIuNjgsMTEuMjEsNC41NiwzLjkyLDEuMjUsOC42NywyLjIsMTIuOTIsMi45Myw4LjEzLDEuMzksMjIuNTUsMy44OSwyOC4yNSw3Ljg0LjkzLjY0LjksMS4yOCwxLjM2LDIuNjEuNywyLjAzLDEuNDQsMy43NSwyLjE5LDUuNzUsMS41MSwzLjk2LDMuMSw3LjY1LDQuNjIsMTEuNTgsMS40LDMuNjMsMy44OSw4LjczLjY0LDEyLjAxLTIuMTksMi4yLTYuNjcsMy41LTEwLjMsMy42LTEuMjEuMDMtMS4xNS0uMTUtMS45Mi4zNC4xMiwxLjItLjk0LDEuMiwzLjI0LDEuMjgsMS42NC4wMywzLjMzLDAsNC45OC0uMDMsNi4wOC0uMTQsMjIuNDkuMjYsMjcuMTQtLjA2LDEuNzYtLjEyLDEuMTcuMDksMS4yNy0xLjE5Wk0xMTI3LjEsNDM0LjUxYy0xMC4yNC0xLjcyLTE3LjIzLTMuODYtMjUuMDctOC4wNS4xLTEuODEsMi4wNC02LDIuNjktNy44LDIuMjYtNi4zLDE4LjE3LTUxLjU0LDE5LjAyLTUyLjYybDcuMzcsMTkuMDljNi45LDE2LjYzLDEzLjY0LDM0LjkzLDIwLjM1LDUxLjc3LjYyLDEuNTYsMS40NSwzLjIsMS44Miw0LjUyLTkuMTctMy45OC0xNi4xNS01LjIzLTI2LjE5LTYuOTFaIi8+CiAgICA8cGF0aCBjbGFzcz0ic3QxIiBkPSJNMTA0Ny44NCwzNTcuMTdjMy45My00LjA2LDkuNDMtMi40NSwxMC45Ni0zLjQ2LS4xNS0xLjM2LjM2LS44NS0xLjE1LTEuMDQtLjM3LS4wNC0xLjg3LS4wNC0yLjM1LS4wNWwtMzEuNDcuMDhjLTIuNDkuMDQtMS4zNC4wNi0xLjk1LjY3LjU0LDEuMjYsMS42Mi4xNyw1LjMuOTgsNi4wNiwxLjMzLDcuOTQsNS4yNSw4LjExLDExLjU3LjIzLDguNDIuMTYsMTcuMDEuMTUsMjUuNS0uMDIsMTcuMjEuMDMsMzQuNDEsMCw1MS42MS0uMDIsOC43My0uMzksMTUuNzgtMy4xMSwyMi42OS0yLjE5LDUuNTctNi43MiwxMS42Ny0xMi44NiwxMi44OS0xNC44NCwyLjk1LTIxLjg4LTE1Ljk4LTIxLjcyLTMwLjE5bC05LjkzLjE2Yy40MSwxLjIyLjUsNC40LjgyLDYuMiwxLjA1LDUuOTYsMi42LDEwLjUzLDYuMzIsMTUuMTksNy4yLDkuMDUsMTkuOTIsMTIuNjgsMzEuNCw4LjYxLDMuMy0xLjE3LDYuNjktMy4yNiw4Ljk2LTUuMjgsNS4zNy00Ljc5LDguMjUtMTEuOTYsOS4zNi0xOS4zOSwxLjE0LTcuNi40NS0xOS45NC40Mi0yOC4xLS4wMy05LjQ5LjMxLTE5LjM2LjA0LTI4Ljc4LS4yNy05LjMyLS4xMS0xOS4xLS4wNi0yOC40NS4wMy00Ljk0LjA5LTguNjYsMi43Ny0xMS40M1oiLz4KICAgIDxwYXRoIGNsYXNzPSJzdDEiIGQ9Ik0zNTYuNzMsNDU5LjgxYy0yLjQxLDcuNDktNC43NiwxNi4wNS0xMi4zNSwxOS4wNy0zLjE3LDEuMjYtNy40Mi43MS0xMS42MS43MS0xNi45NywwLTMzLjk3LjE0LTUwLjk0LS4wMS4zMS0zNC4zMy4xOS02OS41Mi4wMi0xMDMuOTQtLjAzLTUuMTEtLjgyLTExLjg2LDEuMzMtMTUuODMuOTgtMS44MiwyLjU5LTMuMTUsNC42MS00LDIuMzYtMS4wMSwzLjQ1LS44OSw1LjY0LTEuMDUsMS42My0uMTIsMS4xMi4yNiwxLjY1LS42Mi0uMzctLjg4LjAyLS40Ny0xLjAxLS42OGgtMzQuMWMtMS4xNC4yNC0uNDIuMDUtLjk4LjY4Ljc4LDEuODUsMS45NC0uNjEsNy40OCwxLjc3LDcuNTQsMy4yNSw1LjYzLDEyLjUsNS42LDIzLjM3LS4wNCwxMi42OC0uMDgsMjUuMzYtLjEzLDM4LjA1LS4wNSwxMi42LjMyLDI1LjE0LjA5LDM3LjcyLS4xOSwxMC4yMywzLjA5LDI0LjM1LTExLjA5LDI0LjQ2LTEuNDEuMDEtMS45NiwwLTEuOTcuNjgtLjAyLjk1Ljg3Ljc5LDIuNjQuNzUsMjAuMDctLjM5LDQ1LjE3LS4wNyw2NS41Mi0uMDhsMjQuNjkuMDRjLjkzLTEuMzUsMy4xMS0xMC4xMiwzLjc5LTEyLjU5LjYzLTIuMjUsMS4yOC00LjMyLDEuODEtNi40Ny4yOC0xLjE2LjQ5LTIuMTIuNzUtMy4yLjMtMS4yNC44NC0yLjM5LjM5LTMuMjVsLTEuODQsNC40M1oiLz4KICAgIDxwYXRoIGNsYXNzPSJzdDEiIGQ9Ik0xNDg0LjQ2LDM1Mi41NmMtMy4xNi0uMDItNi40NS0uMDYtOS41OS0uMDJsLTcuMjQtLjA0Yy0xLjM5LjAyLS45NC0uNTQtMSwxLjE5LDYuMDYuMTUsMTAuNjcsMS43OSwxMi41Nyw2LjI4LDEuMzEsMy4xMS44MiwxMy45Mi43NywxOC4yMy0uMzMsMjUuMzYuMTQsNTAuMzYtLjAyLDc1Ljc2LS4wMyw0LjYzLjcyLDE0LjY0LS42MSwxOC4zNi0yLjM4LDYuNjMtOC41Myw2LjAyLTEyLjYzLDYuNTdsLjMxLDEuMzJoMzYuMThzLjA5LTEuMzcuMDktMS4zN2MtMTYuMTEtLjg3LTEzLjQ0LTkuMzQtMTMuNDgtMjQuNTQtLjA3LTI1LjAzLjMyLTUxLjY3LS4wMi03Ni40My0uMTYtMTEuOTMtMi4xNy0yMS43Miw5LjY0LTIzLjc1LjctLjEyLDEuMzktLjE0LDIuMS0uMjMsMi4yMi0uMjcsMS42Ny0uNDksMS43Ni0uODRsLTE4Ljg0LS40OVoiLz4KICAgIDxwYXRoIGNsYXNzPSJzdDEiIGQ9Ik04MzAuOTUsNDQ5Ljk2Yy0xLjYuMjUtLjg2LS40Mi0xLjI5LjdsMTQuODguMzFjMTQuNS0uMSwyNi4zLjM1LDM1LjA3LTcuNTgsNy41MS02Ljc5LDEwLjc4LTE5LjIsOC44Ni0zMy4zNS0xLjc3LTEzLjAzLTguMy0yMC4wNS0xOC40Ni0yNC4yMS01LjMyLTIuMTgtMTEuOTctMi42OC0xOC44NS0yLjY0LTcuMDguMDQtMTQuMzctLjEyLTIxLjQxLjA4bC4xMS42M2MxLjMyLjY0LDYuMjQtLjgxLDYuNzMsNS4yMy41Miw2LjQzLjE2LDI5LjYyLjE2LDM3LjA2LDAsNS4xOS4wMywxMC4zNi4wMSwxNS41NS0uMDIsNy4xNC0xLjE0LDcuNS01LjgxLDguMjNaTTg0Mi43NCwzODYuMzJjMy4yMS00LjQ2LDE4LjIzLTIuNDEsMjMuMDUtLjkzLDYuODQsMi4xMSwxMS43NCw2LjM2LDE0LjU0LDEyLjU4LDIuNjEsNS43OSw0LjE1LDE1LjQ0LDMuMzQsMjMuMjQtLjk1LDkuMTEtMi4wNiwxNC40Ni02LjYzLDIwLjI2LTMuODEsNC44NC0xMC4wNSw4LjM4LTE4LjYsOC41NC0zLjYzLjA3LTkuOTguNTMtMTMuMDctLjUxLTQuMjktMS40NC0zLjUzLTUuMDYtMy41NS0xMC4xLS4wMy05LjA0LjA3LTE4LjA4LjA1LTI3LjEzLS4wMS00LjM5LS43NS0yMy43Mi44Ni0yNS45NVoiLz4KICAgIDxwYXRoIGNsYXNzPSJzdDEiIGQ9Ik04OTYuMTIsNDQ5Ljk1Yy0yLjA1LjIzLTEuMzUtLjQ0LTEuNzUsMS4wMiw3Ljc4LjAzLDQ2LjQzLTEuMSw1MC4yNi41MSwxLjI2LTEuNzcsNS4wNi0xNC4xNyw1LjExLTE3LjAyLTEuMTIsMS42Ny0xLjI1LDUuNDYtMy45OCwxMC41NS0uNzEsMS4zMi0yLjA3LDMuMDYtMy4zNywzLjkxLTIuMDQsMS4zMy0zLjM2LDEuMTctNi4yLDEuMTYtOS43OS0uMDQtMTkuNzEuMTgtMjkuNDctLjA5LS41Ni01Ljg0LS4yNS0xMy4xNS0uMjQtMTkuMTguMDEtNi40Mi4zMS0xMy40NS0uMDctMTkuODIsNy4xMS0uMzQsMTQuNjctLjA2LDIxLjg0LS4wOSwyLjcxLS4wMSw4LjQxLS42MiwxMC4xNS44MiwyLjk0LDIuNDMsMS44LDQuNzQsMyw3Ljc5LjA3LTIuNjcuNTktMTUuODYtLjI1LTE3LjA2LS40My45MS0uMjEsNS44NS0zLjE2LDcuMzMtMi4wMSwxLTE3LjMuNTItMjAuNjYuNTFsLTkuODYtLjA1Yy0uNzItLjE2LS4zMi0uMDEtLjczLS4yOS0uNjctMS40Mi0uMjQtMjIuNDUtLjIxLTI2LjAyLDMuODktLjQ1LDIwLjE5LDAsMjYuMDMtLjE1LDkuOC0uMjMsMTAuNywxLjUxLDE0LjAyLDEwLjg1LjA0LjEuMTUuNDEuMTkuNTEuMjYuNjMuMTcuNDIuMzYuNzMtLjA4LTEuMTgtMi43Ni0xMS41NC0zLjMyLTEyLjY0LTguMjEtLjEyLTE2LjU5LS4xLTI0LjgxLS4wMS00LjA1LjA0LTguMTksMC0xMi4yNC0uMDItMS4yMiwwLTExLjI2LS4zMy0xMi4yMS4zMS42MSwxLjYzLS4yNC0uNCwzLjQzLjg0LDQuNDYsMS41LDMuMzEsNy40LDMuMzIsMTIuMDcuMDIsNi40OS44OCw0Ny40OS0uMzcsNTAuNzYtLjgyLDIuMTUtMi45OSwyLjYtNC44LDIuNzlaIi8+CiAgICA8cG9seWdvbiBjbGFzcz0ic3QxIiBwb2ludHM9IjgyNS43NCA0NjYuNDggODI1LjkgNDY5LjU0IDk1NS43IDQ2OS41MyA5NTUuNjggNDY2LjU0IDgyNS43NCA0NjYuNDgiLz4KICAgIDxwYXRoIGNsYXNzPSJzdDEiIGQ9Ik05NTUuNjMsMzYyLjA1bC0xMjkuOTItLjA2LS4wMywzLjFjMy45NC0uMzUsNjAuNTYtLjEzLDY1LjE4LS4wOSwyMS41NC4yMSw0My4zMi0uMzMsNjQuNzQuMTlsLjAyLTMuMTRaIi8+CiAgICA8Zz4KICAgICAgPHBhdGggY2xhc3M9InN0MSIgZD0iTTE2MTkuNTgsMzcyLjU3Yy0uMDIuMi0uMDMuMzctLjA0LjUyLjAxLS4xNS4wMi0uMzIuMDQtLjUyWiIvPgogICAgICA8cGF0aCBjbGFzcz0ic3QxIiBkPSJNMTYxOS41NCwzNzMuNzdjLjAxLjA2LjAzLjEuMDUuMTJoMHMtLjA0LS4wNi0uMDUtLjEyWiIvPgogICAgICA8cGF0aCBjbGFzcz0ic3QxIiBkPSJNMTYzNC44LDM1Mi41M2MtMS4yMi0uMDEtMi40MiwwLTMuNjUtLjA1aC0yMC4yMWMtMS43Mi4xNC0uODMtLjI2LTEuMjkuNTcuNS45Mi44MS40NiwyLjg1Ljc4LDkuMywxLjQ1LDYuODYsNy44OCw3LjA4LDE4Ljc0djEuMzJjLjA3LjA4LjE5LjAyLjM3LS4wMi0uMTguMDUtLjMxLjEtLjM3LjAybC0uMDIsOTEuMzNjLS44OC0uNzQtNy4wOC0xMS45MS04LjI2LTEzLjkybC01Mi40My05MS44MWMtMS40My0yLjU1LTIuODctNC43Ni00LjE2LTcuMS0yLjM1LjIzLTIxLjg1LjQtMjIuNzQuMDctLjA1LDEuNDktLjk3LDEuMjgsMy4yMiwxLjI0LDMuMTMtLjAzLDEwLjM1LjM3LDEyLjA3LDIuNDksMS4xMSwxLjM2LjQ5LDE1LjczLjQ5LDE4LjY5djk1Ljk1Yy4wNCw1LjA1LTEuODksNy42Ni02LjYxLDcuOTktMi40LjE2LTIuOS0uNS0yLjk1LDEuMzFsMjcuOS0uMDJjLTEuMDktLjU2LTEuNy0uNTItMy4wNi0uNS44Ni0uMTMsMS41OSwwLDIuMy0uNTUtMTguMTQtLjYxLTE2LjQ4LTMuMy0xNi40LTE3LjVsLjA1LTY4LjE1YzAtMTEuMTMuNDUtMjMuMDYuMDQtMzQuMDksMS4wOS42Ni40OC4zNCwxLjIxLDEuODQsMi4xOCw0LjQ3LDE4LjA5LDMxLjQ0LDIwLjksMzYuMDFsMTMuNCwyM2MyLjY3LDUuMjMsNS44OSwxMC4yOCw4LjgxLDE1LjM0bDI0LjM1LDQxLjgxYy43MiwxLjI0LDEuMjcsMy4xOSwyLjg1LDMuNDEuNDQtMy45Ny4yNy00OC41Mi4yNy01My41NywwLTE3LjcyLS4zNC0zNS42NS0uMi01My4yNy4wNS00Ljc3LS45Ni0xNC44LDEuOTUtMTcuMTgsMi45LTIuMzcsOS4wOC0yLjczLDEzLjIzLTIuOTcsMS41OS0uMDksMS40OC4yNiwxLjk1LS42OS0uMzctLjc2LS4yMy0uNS0yLjk2LS41M1oiLz4KICAgIDwvZz4KICAgIDxwYXRoIGNsYXNzPSJzdDEiIGQ9Ik03NzYuNjgsNDE5LjAzYy0yLjIxLTEuNTctNC4zNy0zLjIxLTYuNjktNC42NC0xMC41OS02LjUxLTIxLjgyLTEyLjEtMzEuNy0xOS42OS01LjI0LTQuMDMtOS45Mi05LjQtMTEuNTgtMTUuOTQtMS4zLTUuMTQtLjUzLTEwLjM3LDIuMzYtMTQuODIsMi45NC00LjUyLDcuNi03LjU1LDEyLjc1LTguOTgsNi4zNC0xLjc2LDEzLjA4LTEuMDgsMTkuMjMsMS4wNywyLjU4LjksNC44OSwyLjAzLDcuMTQsMy41OSwxLjg3LDEuMjksMy42MSwyLjc4LDUuNDQsNC4xMy40OC4zNi45NS43OCwxLjM5LDEuMTkuNTYuNTIsMS4xLDEuMDUsMS42MywxLjU5Ljk3Ljk4LDEuOTMsMS45OCwyLjg2LDNoLjAxczYuMyw3LjQ4LDYuMyw3LjQ4bC40LjAyLTMuNDktMjEuODJjLTEuNC0uMTItMi44My0uMzUtNC4yMS0uNTctMS42NC0uMjctMy4yOS0uNTctNC45NC0uNzctMTYuMTgtMS45Ni0zNy4xOC0yLjc4LTUwLjE0LDguODNsLTUuMjEsNi4wMmMtNC4xNSw2LjY2LTQuMDgsMTQuNC0uMywyMS4yLDQuMSw3LjM3LDEzLjExLDE0LjA4LDE5Ljk3LDE4Ljg2bDEwLjMxLDYuODljMS41Ny45OCwzLjEzLDIuMDIsNC42OSwzLjA2LDEuOTEsMS4yOCwzLjgyLDIuNTgsNS43MSwzLjg5LDEuODYsMS4yOSwzLjcxLDIuNTksNS41NCwzLjkyLDEuNDIsMS4wMywyLjg0LDIuMDcsNC4yMSwzLjE2LDQuMTksMy4zNCw4LjM2LDcuNCwxMS4wMiwxMi4xLDMuMjUsNS43NCw0LjUyLDEyLjc0LDMsMTkuMi0yLjI0LDkuNTQtOS40NywxNS42MS0xOC43MSwxOC4wNC00LjU4LDEuMi05LjQ0LDEuNDYtMTQuMTQuOTQtNC44Mi0uNTQtOS41OS0xLjkxLTEzLjkzLTQuMDgtMy4wMS0xLjUyLTUuOTItMy41MS04LjU2LTUuNi0yLjY3LTIuMTEtNS4yNi00LjQ4LTcuNTEtNy4wM2wtMi44LTIuOTZjLS4yNi0uMjYtLjQ4LS41NC0uNy0uODUtLjE2LS4yMi0uMzEtLjQzLS41MS0uNjNsLS4wMi0uMDItMy43My00LjMxLS40Mi4wNywzLjE3LDIxLjhjMS4xNC41MSwyLjM2LjkxLDMuNTUsMS4yNSwxLjYxLjQ3LDMuMjYuODQsNC45MSwxLjE3LDMuMTQuNjMsNi4zNCwxLjEsOS41MywxLjQ1LDMuNTkuNCw3LjIxLjY3LDEwLjgyLjgzLDMuNjIuMTYsNy4yNy4yMiwxMC44OS4wNSw2LjU5LS4zLDEyLjY1LTEuNDQsMTguODctMy41NywzLjc1LTEuMjgsNy43NS0zLjM0LDEwLjk0LTUuNjksMS4wNy0uNzksMi4xNS0xLjYxLDMuMTEtMi41NC45Mi0uODksMS43NS0xLjksMi41Ny0yLjg4LjgzLS45OCwxLjU4LTIuMjUsMi4yNS0zLjM2LDYuMjktMTAuNCw0LjExLTI0LjItMy42LTMzLjI0LTMuNDYtNC4wNS03LjMzLTcuNzMtMTEuNjgtMTAuODJaIi8+CiAgPC9nPgogIDxnPgogICAgPHBhdGggY2xhc3M9InN0MCIgZD0iTTkwNy44LDcyNy43NGMtMy44OS4xMi03LjM2LjEzLTcuODguMTEtNy43OC0uMjItMTAuNTMtMi4xLTEwLjUzLTcuMmwtLjA5LTMwLjg1LDE0LjIxLjAyYzEzLjM5LDAsMjQuNDgsMS4zOSwyNC40OCwxOC40OSwwLDEyLjQ3LTYuODIsMTktMjAuMTksMTkuNDJNODg5LjM3LDY1My43OGMwLS45NS43Ny0xLjczLDEuNzUtMS43NywxMS45NC0uNDYsMTkuMjctLjE3LDIyLjQuOTEsNi41NCwyLjI0LDEwLjE0LDcuOTcsMTAuMTQsMTYuMTFzLTMuMTIsMTcuNzMtMjAuMzcsMTcuNzNoLTE0LjA5bC4xNy0zMi45OFpNOTIyLjAyLDY4Ny42MmwtMi41LS42LDIuNC0uOTJjOC4yOC0zLjE5LDEyLjg1LTkuNjMsMTIuODUtMTguMTMsMC02LjMzLTMuNzktMTIuNjMtOS4yMS0xNS4yOS02LjAyLTMuMDEtMTIuMDEtMy42Mi0xOS43My0zLjYybC0zNS4zOS0uMDQtLjMzLDIuMjFjNy4xOS40OCw4Ljc0LDEuMTEsOC43NCw2LjA0djY1LjA5YzAsNC4yMi0yLjg1LDUuMTEtOC40Niw1LjI3LS4wOC41LS4yNiwxLjcyLS4zMywyLjIxLjM5LjE4LDEwLjI2LjMxLDEzLjAyLjM2bDIxLjgyLjA2YzIyLjM1LDAsMzQuNjctOCwzNC42Ny0yMi41MywwLTkuOTctNi41Ni0xNy40OS0xNy41NS0yMC4xMiIvPgogICAgPHBhdGggY2xhc3M9InN0MCIgZD0iTTgyNC4zNCw3MjguODhjLTE4LjM1LDAtMjcuOTQtMTguODctMjcuOTQtMzcuNSwwLTI4LjA3LDE0Ljc0LTQwLjYzLDI5LjM1LTQwLjYzLDkuMzQsMCwyOC42MSw5LjY4LDI4LjYxLDM5LjYxLDAsMTguNjgtMTAuNTIsMzguNTMtMzAuMDIsMzguNTNNODI0LjkxLDY0OC4yMmMtMTMuODMsMC0zOS45OCw4LjkyLTM5Ljk4LDQyLjY5LDAsMTUuMDQsOC4zLDQwLjQ5LDM5LjQxLDQwLjQ5LDMyLjc3LDAsNDEuNTItMjUuNzMsNDEuNTItNDAuOTQsMC0yOS4wMi0yMS4yMy00Mi4yNC00MC45NS00Mi4yNCIvPgogICAgPHBhdGggY2xhc3M9InN0MCIgZD0iTTc0Mi40LDcyOC43OGMtMTguMjEsMC0yOS4wOS0xOS4yLTI5LjA5LTM3Ljc1czkuMzMtNDAuMjgsMjkuOC00MC4yOGMxNy44MiwwLDI2LjQyLDE0LjIxLDI4LjU2LDI3LjU5bDEuODIuMjMuMi0yNi42M2MtLjQ0LS4wNy0xLjM2LS4yMi0xLjQ5LS4yNSwwLDAtLjA2LDAtLjIxLjE3LS4yMi4yNS0zLjYyLDUuMzMtMy42Miw1LjMzLDAsMC05LjM2LTguOTYtMjUuMjYtOC45Ni0yMy45MSwwLTQxLjI2LDE3LjcyLTQxLjI2LDQyLjEzczE1LjQxLDQxLjA1LDQwLjIsNDEuMDVjMTcuMDYsMCwyNi45NS05LjAzLDI2Ljk1LTkuMDNsMi45Niw2LjE0Yy4wNC4wOC4xMi4xMy4yMS4xM2gxLjY3bC4yLTI1LjU1LTEuODEtLjI3Yy0zLjQzLDE2LjAyLTE0Ljg1LDI1Ljk1LTI5Ljg1LDI1Ljk1Ii8+CiAgICA8cGF0aCBjbGFzcz0ic3QwIiBkPSJNNjQ3LjAzLDY5Ni4zbDEyLjU4LTMyLjk3LDEzLjI2LDMyLjk3aC0yNS44M1pNNjkyLjc3LDcxNy41Yy0yLjE5LTUuMjctNy4zNi0xOC4yNi0xMi4zNy0zMC44Mi01LjMxLTEzLjM0LTEwLjMzLTI1Ljk0LTExLjYzLTI4LjkzLTEuMjItMi44Mi0zLjQ5LTguNTQtNC4yMS0xMC4zNy0uNzUsMS40OC0zLjEyLDUuNTItOC4wNyw4LjQuNTgsMS4yNSwxLjQ3LDMuNjQsMS40NywzLjY0LDAsMC0yMS42NCw1NS45Mi0yMy40Nyw2MC41LTEuNjksNC4yMy0zLjYzLDcuMDEtOC4wMiw3Ljc5bC0uMjYsMi4wNiwyMC45NS4wMy4zLTIuMDZjLTEuMjYtLjEyLTYuMjYtLjY4LTcuNjMtMS43Ni0xLjU5LTEuMjYtMi4zNy0yLjY3LTEuMzMtNS44MywxLjYyLTQuOTMsNy40OS0yMS4xMSw3LjQ5LTIxLjExaDI3Ljk1czYuOTQsMTguNDMsNy4wNiwxOC43N2MxLjA1LDMuMDEsMS44Nyw1LjM5LjY3LDcuMTItMS4zNCwxLjkyLTQuMzIsMi44MS05LDIuNzNsLS4zMywyLjExaDMwLjMxbC4yNy0xLjkxYy0uNjYtLjExLTIuNDQtLjQ3LTQuMDctMS4zMy0yLjEyLTEuMTItMy44OS0zLjczLTYuMDktOS4wMyIvPgogICAgPHBhdGggY2xhc3M9InN0MCIgZD0iTTYyMy45OSw2NTMuMjJjMi4xMS0yLjIxLDYuOTUtMi4yNiw4LjA5LTIuMjRsLjIyLTEuNjItMjguOTMtLjEzLTEuNDEsMS42MmM1Ljg5LjE3LDcuMTUuNzIsOC44NCwyLjY2LDEuMjIsMS40LDEuNTksNC45MiwxLjYsNi41OC4wMywyLjAyLS4wMSw0My4wOS0uMDEsNDMuMDksMCw5LjY4LS45NCwxNC43Ny0zLjQ4LDE4Ljc2LTIuODMsNC40NS03LjQzLDcuMDEtMTIuNjIsNy4wMWgtLjAyYy0zLjg3LDAtOC4yLTIuMTUtOC45OC02LjIzLS4wOS0uNDktLjE4LTIuNjYtLjUtMy41My0uNjYtMS43Ny0yLjMzLTMuMTktNC4zMS0zLjcxLTIuODktLjc1LTQuOTQuNTItNS44NSwxLjc3LTEuMTksMS42Ni0xLjExLDQuMjMuMTksNi4yNSwyLjYzLDQuMDcsOS41NCw2LjQ2LDE1LjEyLDcuMzUsNS4zMi44NCwxMS4wMy40MywxNS42OC0xLjEyLDMuNjMtMS4yMSw2LjI4LTIuOTYsOS4xNS02LjA2LDQuMDQtNC4zNiw1Ljg1LTExLjY2LDUuODUtMjQuMTFzLS4wMy0zOS40OSwwLTQxLjI4Yy4wMi0xLjc5LS4wNS0zLjU5LDEuMzYtNS4wNiIvPgogICAgPHBhdGggY2xhc3M9InN0MCIgZD0iTTExNjguNjYsNzI4Ljg4Yy0xOC4zNCwwLTI3Ljk0LTE4Ljg3LTI3Ljk0LTM3LjUsMC0yOC4wNywxNC43NC00MC42MywyOS4zNS00MC42Myw5LjMzLDAsMjguNjEsOS42OCwyOC42MSwzOS42MSwwLDE4LjY4LTEwLjUyLDM4LjUzLTMwLjAyLDM4LjUzTTExNjkuMjMsNjQ4LjIyYy0xMy44MywwLTM5Ljk4LDguOTItMzkuOTgsNDIuNjksMCwxNS4wNCw4LjMsNDAuNDksMzkuNDEsNDAuNDksMzIuNzcsMCw0MS41Mi0yNS43Myw0MS41Mi00MC45NCwwLTI5LjAyLTIxLjIzLTQyLjI0LTQwLjk0LTQyLjI0Ii8+CiAgICA8cGF0aCBjbGFzcz0ic3QwIiBkPSJNOTgwLjk5LDcyMC45OGMtOC43Ny0yLjM2LTEzLjg5LTExLjMzLTEyLjkxLTIxLjY0Ljc4LTguMSw3LTExLjYzLDkuNTktMTMuNDIsNCw1LjQ2LDE1LjQ5LDE4LjU4LDI1LjA3LDI4LjUxLTguNTksNy40NC0xNi4wNyw4LjA3LTIxLjc1LDYuNTRNOTc3LjM5LDY1Ny41NmMuODctMi4yMSwyLjU4LTMuODMsNC45Ny00LjY5LDcuMjQtMi42MiwxMy45MS45MiwxNi41LDUuNTgsMi45OCw1LjM1LjY2LDExLjc0LTUuOTEsMTYuMjgtMS40OSwxLjAyLTYuNCwzLjk2LTYuNCwzLjk2LDAsMC01LjQtNS44Ni03Ljk3LTEwLjk2LTEuODctMy43Mi0yLjMyLTcuMzEtMS4yLTEwLjE3TTEwODYuNzIsNzI4Ljc4Yy0xOC4yMSwwLTI5LjA5LTE5LjItMjkuMDktMzcuNzVzOS4zMy00MC4yOCwyOS44MS00MC4yOGMxNy44MiwwLDI2LjQyLDE0LjIxLDI4LjU2LDI3LjU5bDEuODIuMjMuMi0yNi42M2MtLjQzLS4wNy0xLjM2LS4yMi0xLjQ5LS4yNS0uMDMsMC0uMDcsMC0uMjEuMTYtLjIyLjI1LTMuNjIsNS4zMy0zLjYyLDUuMzMsMCwwLTkuMzYtOC45Ni0yNS4yNi04Ljk2LTIzLjkxLDAtNDAuOTYsMTcuNDktNDEuMzIsNDEuOS0uMzcsMjUuNjgsMTYuOSwzNS4xNCwxNi45LDM1LjE0LDAsMC02LjIzLDcuOTktMTUuNTYsOC4zMy0xNS45LjU3LTMxLjQ1LTIyLjQ1LTM0LjcxLTI1LjI5LDMuNDgtNC40NSw5Ljc3LTE0LjQxLDEzLjcxLTE3LjAyLDMuNzUtMi40OCw3LjE3LTIuNzUsOC4xMy0yLjc1bC4zLTEuNjdoLTIwLjU2Yy0uMTYuODMtLjI2LDEuMzUtLjM0LDEuNjcsMS44Ny4wMyw0LjUxLjEyLDUuNzgsMS4xLjk3Ljc1LDEuMTIsMS42NC0uNjEsNC43MS0yLjAxLDMuNTUtNS44Myw4LjkyLTguMjYsMTEuODQtNC40Mi01LjE1LTE4LjU3LTIxLjYyLTIyLjk3LTI1Ljk3LDEwLjA3LTQuNTMsMTkuMy04LjkzLDE5LjYzLTE3LjM0LjE2LTQuMTUtMy4wMi0xMS41OS0xMi4yNS0xMy44NS0yLjg3LS43LTEwLjI0LTEuNzgtMTYuODMsMy4zOC0yLjMsMS44LTcuNjQsNi45Ni03LjU5LDE1Ljk3LjAzLDQuNzgsMS40MSw5LjUzLDUuNDYsMTUuNjQtMjAuOTgsMTAuNTgtMTguMTQsMjUuOTctMTcuMTgsMzAuNDMsMS4zNiw2LjI0LDguNjgsMTUuODgsMjIuNTQsMTUuNTksMTQuNjItLjMxLDIzLjY4LTEyLjgsMjMuNjgtMTIuOCwwLDAsNS4yOCw1LjM1LDguNTksOC4zNCwxMy40MywxMi4xMSwyNi45MSwxMy41OCwzNS4wOCwxMS4xNSwxMC40Mi0zLjA5LDE1LjU0LTEwLjU2LDE1LjU0LTEwLjU2LDAsMCw3Ljk5LDUuMjQsMjEuNzYsNS4yNCwxNi44NCwwLDI2Ljk1LTkuMDMsMjYuOTUtOS4wM2wyLjk2LDYuMTRjLjA0LjA4LjEyLjEzLjIxLjEzaDEuNjdsLjE5LTI1LjU1LTEuOC0uMjdjLTMuNDMsMTYuMDItMTQuODUsMjUuOTUtMjkuODUsMjUuOTUiLz4KICAgIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0xMDAyLjE1LDU5N2g5LjIydi0xLjcyaC0yLjg4bC0uMTktLjJ2LTguMDNsNy4xOS0xMi43MiwzLjI3LTEuOTJ2LS4zOGgtOC43NnYuMzhsMy40NiwxLjkyLTUuOTUsMTAuOTVoLS4wOGwtNS44OC0xMC45NSwzLjQ2LTEuOTJ2LS4zOGgtMTAuMjJ2LjM4bDMuMjcsMS44OCw3LjE5LDEyLjkxdjcuODhsLS4xOS4yaC0yLjg4djEuNzJaTTk4My4zNSw1OTUuMjdoLTMuMjN2LTEwLjU3aDMuNTRjNCwwLDYuMTUsMS44OCw2LjE1LDUuMDQsMCwzLjg4LTIuNjIsNS41NC02LjQ2LDUuNTRNOTgzLjEyLDU3My43NWMzLjE5LDAsNS4xNSwxLjQ2LDUuMTUsNCwwLDMuNjEtMi40Niw1LjIzLTYuMTEsNS4yM2gtMi4wNHYtOS4yM2gzWk05ODYuNjIsNTgzLjRjMi44LTEsNC44OC0zLjA0LDQuODgtNS44NCwwLTMuNTQtMi44OC01LjUzLTguMzctNS41M2gtOS4zM3YuMzhsMy4yNywxLjkydjIwLjc1bC0uMTkuMmgtMi44OHYxLjcyaDEwLjE0YzQuOTYsMCw4LjkxLTIuMyw4LjkxLTcuMjYsMC0zLjQ2LTIuOC01LjY1LTYuNDEtNi4zNE05NDEuOSw1OTUuMjd2LTIxLjUyaDIuMzFjNy42OSwwLDExLjUzLDMuMzgsMTEuNTMsMTAuMzgsMCw3LjU3LTQuMDMsMTEuMTUtMTEuMTgsMTEuMTVoLTIuNjVaTTkzNS43NSw1OTdoOC45MWM5LjQyLDAsMTQuMzMtNC43MiwxNC4zMy0xMy4yMXMtNS4zOC0xMS43NS0xNC4wNi0xMS43NWgtOS4zN3YuMzhsMy4yNywxLjkydjIwLjc1bC0uMTkuMmgtMi44OHYxLjcyWk05MzAuMzcsNTkwLjY2bC0zLjE5LDQuNjFoLTguNzJ2LTEwLjY1aDYuMzRsLjE5LjE5djIuODhoMS43M3YtNy44N2gtMS43M3YyLjg4bC0uMTkuMmgtNi4zNHYtOS4xNWg4LjNsMi41NCw0LjYxaC4xOXYtNi4zNGgtMTcuMzZ2LjM4bDMuMjcsMS45MnYyMC43NWwtLjE5LjJoLTIuODh2MS43MmgxNy44NmwuMzgtNi4zNGgtLjE5Wk04OTguMjksNTcyLjAzdi4zOGwzLjI3LDEuOTJ2MTYuNjRsLTEzLjc2LTE4Ljk0aC02LjQ5di4zOGwzLjI3LDEuOTJ2MjAuNzVsLS4xOS4yaC0yLjg4djEuNzJoOC4yNnYtMS43MmgtMi44OGwtLjE5LS4ydi0xOS4zM2wxNS40OSwyMS4yNWgxLjV2LTIyLjY3bDMuMjctMS45MnYtLjM4aC04LjY0Wk04NjcuNjYsNTg2Ljc4djEuNzJoMy44NGwuMi4xOXY1LjkyYy0xLjM5LjY1LTIuOTYsMS4wNC00Ljc3LDEuMDQtNS43MywwLTkuNTMtNC05LjUzLTExLjUzLDAtNi45NiwzLjczLTEwLjY1LDguOC0xMC44LDIuNTctLjA4LDQuMDcuNTgsNS41NywxLjk2bDIuMjYsMy45NmguMTl2LTYuNWMtMS45Mi0uOC00LjE5LTEuMy03LjExLTEuMy03LjQ2LDAtMTMuMTgsNS4zLTEzLjE4LDEyLjk5czQuNzYsMTMuMTQsMTIuNDEsMTMuMTRjMy42NSwwLDUuODQtLjY1LDguNDEtMi4zdi02LjU3bC4xOS0uMTloMi41di0xLjcyaC05Ljc5Wk04MzkuMzUsNTk3aDkuMjJ2LTEuNzJoLTIuODhsLS4xOS0uMnYtMjAuNzVsMy4yNy0xLjkydi0uMzhoLTkuNnYuMzhsMy4yNywxLjkydjIwLjc1bC0uMTkuMmgtMi44OHYxLjcyWk04MjYuNTksNTk3LjU3YzQuMzUsMCw3LjU3LTIuOCw3LjU3LTYuNjgsMC0yLjA3LS43Ny0zLjU0LTEuODQtNC43Ni0zLjE5LTMuNTQtOS44OC00LjM4LTkuODgtOS4wNywwLTIuMzEsMS44OS0zLjgsNC4yNy0zLjgsMS43MywwLDMuMDcuNjEsNC4xNSwxLjczbDIuMTEsMy42OWguMTl2LTUuNjFjLTEuNjUtLjg4LTMuNDYtMS42MS02LjE1LTEuNjEtNC4xOSwwLTcuMjIsMi44OC03LjIyLDYuNTcsMCw0LjA4LDIuOCw1Ljg0LDYuMzgsNy43Myw0LDIuMDcsNS40MiwzLjYxLDUuNDIsNi4wN3MtMS45MiwzLjk2LTQuNTgsMy45NmMtMi4wNywwLTMuNjktLjczLTUuMTktMi4xOWwtMi4xMS0zLjY5aC0uMTl2NS42OWMyLjE1LDEuMzEsNC42NSwxLjk5LDcuMDcsMS45OU04MTQuMTQsNTkwLjY2bC0zLjE5LDQuNjFoLTguNzJ2LTEwLjY1aDYuMzVsLjE5LjE5djIuODhoMS43MnYtNy44N2gtMS43MnYyLjg4bC0uMTkuMmgtNi4zNXYtOS4xNWg4LjNsMi41NCw0LjYxaC4xOXYtNi4zNGgtMTcuMzZ2LjM4bDMuMjcsMS45MnYyMC43NWwtLjE5LjJoLTIuODh2MS43MmgxNy44NmwuMzgtNi4zNGgtLjE5Wk03NzMuNiw1OTUuMjd2LTIxLjUyaDIuMzFjNy42OSwwLDExLjUzLDMuMzgsMTEuNTMsMTAuMzgsMCw3LjU3LTQuMDMsMTEuMTUtMTEuMTgsMTEuMTVoLTIuNjVaTTc2Ny40Niw1OTdoOC45MWM5LjQyLDAsMTQuMzMtNC43MiwxNC4zMy0xMy4yMXMtNS4zNy0xMS43NS0xNC4wNi0xMS43NWgtOS4zN3YuMzhsMy4yNywxLjkydjIwLjc1bC0uMTkuMmgtMi44OHYxLjcyWiIvPgogIDwvZz4KPC9zdmc+" alt="Fleurs de Jardin — Designed by Jacob &amp; Co." />
+    </div>
+    <dl class="hero-meta">
+      <div>
+        <dt>Project</dt>
+        <dd>Fleurs de Jardin</dd>
+      </div>
+      <div>
+        <dt>Designed by</dt>
+        <dd>Jacob &amp; Co.</dd>
+      </div>
+      <div>
+        <dt>Phase</dt>
+        <dd>Pre-Launch / Teaser</dd>
+      </div>
+      <div>
+        <dt>Channels</dt>
+        <dd>Instagram · Web · Event</dd>
+      </div>
+    </dl>
+
+    <nav class="hero-nav" aria-label="Sections">
+      <a href="#static">01 Static Posts</a>
+      <a href="#reels">02 Teasers</a>
+      <a href="#landing">03 Landing Page</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Marquee -->
+<div class="marquee">
+  <div class="marquee-track">
+    <span>A garden in bloom</span>
+    <span>Designed by Jacob &amp; Co.</span>
+    <span>Like a secret garden</span>
+    <span>Where artistry takes root</span>
+    <span>Form, light, colour come alive</span>
+    <span>Privacy by instinct</span>
+    <span>A life at an intentional pace</span>
+    <span>Where time lives in every detail</span>
+    <span>A garden in bloom</span>
+    <span>Designed by Jacob &amp; Co.</span>
+    <span>Like a secret garden</span>
+    <span>Where artistry takes root</span>
+    <span>Form, light, colour come alive</span>
+    <span>Privacy by instinct</span>
+    <span>A life at an intentional pace</span>
+    <span>Where time lives in every detail</span>
+  </div>
+</div>
+
+<!-- ===== Section 01: Instagram Static Posts ===== -->
+<section class="section" id="static">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-tag"><span class="tag-num">01</span> Instagram Static Posts</div>
+      <div>
+        <h2 class="section-title">Slowly, the <em>garden</em> reveals itself.</h2>
+        <p class="section-desc">Four stills. Four quiet invitations. Each frame chosen not by chance, but by instinct — a hue, a hint, a half-spoken promise of what is taking shape in Meydan.</p>
+      </div>
+    </div>
+
+    <div class="ig-grid two-up">
+
+      <!-- Post 1 -->
+      <article class="ig-card reveal">
+        <div class="ig-mockup">
+          <div class="ig-header">
+            <div class="ig-user">
+              <div class="ig-avatar"><img src="https://mcusercontent.com/03320827781bfef6d5e9f5ead/images/9eddb0bf-fc55-a791-4d23-863ff2a0bd1a.png" data-amis-avatar alt="AMIS Development profile picture" /></div>
+              <div class="ig-username">amisdevelopment<span class="verified"></span></div>
+            </div>
+            <div class="ig-dots">⋯</div>
+          </div>
+          <div class="ig-image"><img src="https://mcusercontent.com/03320827781bfef6d5e9f5ead/images/bee7ee2c-8d4c-d848-4784-d9812dec95b7.png" alt="Static Post 01" /></div>
+          <div class="ig-actions">
+            <div class="ig-actions-left">
+              <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.5 8 3 4 7 4c2 0 3.5 1 5 3 1.5-2 3-3 5-3 4 0 6.5 4 4.5 8C19 16.5 12 21 12 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-1 4 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-4-1L3 21l1.9-5.4a8.4 8.4 0 0 1-1-4 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 4-1h.5a8.5 8.5 0 0 1 8 8z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4z"/></svg>
+            </div>
+            <svg viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <div class="ig-likes">2,481 likes</div>
+          <div class="ig-caption">
+            <span class="username">amisdevelopment</span>
+            <span class="ig-caption-text">A rare new chapter of branded living is about to bloom in Meydan. Fleurs de Jardin, designed by Jacob &amp; Co., is coming soon. Register your interest to be among the first to discover more.</span>          </div>
+          <div class="ig-time">2 hours ago</div>
+        </div>
+        <div class="ig-meta">
+          <div class="ig-meta-label">Post 01 · Teaser</div>
+          <div class="ig-meta-pill">4:5 Static</div>
+        </div>
+      </article>
+
+      <!-- Post 2 -->
+      <article class="ig-card reveal">
+        <div class="ig-mockup">
+          <div class="ig-header">
+            <div class="ig-user">
+              <div class="ig-avatar"><img src="https://mcusercontent.com/03320827781bfef6d5e9f5ead/images/9eddb0bf-fc55-a791-4d23-863ff2a0bd1a.png" data-amis-avatar alt="AMIS Development profile picture" /></div>
+              <div class="ig-username">amisdevelopment<span class="verified"></span></div>
+            </div>
+            <div class="ig-dots">⋯</div>
+          </div>
+          <div class="ig-image"><img src="https://mcusercontent.com/03320827781bfef6d5e9f5ead/images/4dae3ea1-5869-eb0f-0427-cfe05dadd677.png" alt="Static Post 02" /></div>
+          <div class="ig-actions">
+            <div class="ig-actions-left">
+              <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.5 8 3 4 7 4c2 0 3.5 1 5 3 1.5-2 3-3 5-3 4 0 6.5 4 4.5 8C19 16.5 12 21 12 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-1 4 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-4-1L3 21l1.9-5.4a8.4 8.4 0 0 1-1-4 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 4-1h.5a8.5 8.5 0 0 1 8 8z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4z"/></svg>
+            </div>
+            <svg viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <div class="ig-likes">3,108 likes</div>
+          <div class="ig-caption">
+            <span class="username">amisdevelopment</span>
+            <span class="ig-caption-text">Dubai's rare flower is preparing to bloom. An exclusive limited-edition branded villa community is coming soon to Meydan. Register now for early details.</span>          </div>
+          <div class="ig-time">5 hours ago</div>
+        </div>
+        <div class="ig-meta">
+          <div class="ig-meta-label">Post 02 · Brand Reveal</div>
+          <div class="ig-meta-pill green">4:5 Static</div>
+        </div>
+      </article>
+
+      <!-- Post 3 -->
+      <article class="ig-card reveal">
+        <div class="ig-mockup">
+          <div class="ig-header">
+            <div class="ig-user">
+              <div class="ig-avatar"><img src="https://mcusercontent.com/03320827781bfef6d5e9f5ead/images/9eddb0bf-fc55-a791-4d23-863ff2a0bd1a.png" data-amis-avatar alt="AMIS Development profile picture" /></div>
+              <div class="ig-username">amisdevelopment<span class="verified"></span></div>
+            </div>
+            <div class="ig-dots">⋯</div>
+          </div>
+          <div class="ig-image"><img src="https://mcusercontent.com/03320827781bfef6d5e9f5ead/images/a5c4566a-39b6-357b-39f3-fe1e8ebe995f.png" alt="Static Post 03" /></div>
+          <div class="ig-actions">
+            <div class="ig-actions-left">
+              <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.5 8 3 4 7 4c2 0 3.5 1 5 3 1.5-2 3-3 5-3 4 0 6.5 4 4.5 8C19 16.5 12 21 12 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-1 4 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-4-1L3 21l1.9-5.4a8.4 8.4 0 0 1-1-4 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 4-1h.5a8.5 8.5 0 0 1 8 8z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4z"/></svg>
+            </div>
+            <svg viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <div class="ig-likes">4,602 likes</div>
+          <div class="ig-caption">
+            <span class="username">amisdevelopment</span>
+            <span class="ig-caption-text">A world of rarity, artistry, and branded luxury is coming soon. Fleurs de Jardin by Jacob &amp; Co. Meydan's most exclusive new address awaits.</span>          </div>
+          <div class="ig-time">1 day ago</div>
+        </div>
+        <div class="ig-meta">
+          <div class="ig-meta-label">Post 03 · Concept</div>
+          <div class="ig-meta-pill pink">4:5 Static</div>
+        </div>
+      </article>
+
+      <!-- Post 4 -->
+      <article class="ig-card reveal">
+        <div class="ig-mockup">
+          <div class="ig-header">
+            <div class="ig-user">
+              <div class="ig-avatar"><img src="https://mcusercontent.com/03320827781bfef6d5e9f5ead/images/9eddb0bf-fc55-a791-4d23-863ff2a0bd1a.png" data-amis-avatar alt="AMIS Development profile picture" /></div>
+              <div class="ig-username">amisdevelopment<span class="verified"></span></div>
+            </div>
+            <div class="ig-dots">⋯</div>
+          </div>
+          <div class="ig-image"><img src="https://mcusercontent.com/03320827781bfef6d5e9f5ead/images/349e0e15-81d7-5abe-418b-c595bae8c7ea.png" alt="Static Post 04" /></div>
+          <div class="ig-actions">
+            <div class="ig-actions-left">
+              <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.5 8 3 4 7 4c2 0 3.5 1 5 3 1.5-2 3-3 5-3 4 0 6.5 4 4.5 8C19 16.5 12 21 12 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-1 4 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-4-1L3 21l1.9-5.4a8.4 8.4 0 0 1-1-4 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 4-1h.5a8.5 8.5 0 0 1 8 8z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4z"/></svg>
+            </div>
+            <svg viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <div class="ig-likes">5,127 likes</div>
+          <div class="ig-caption">
+            <span class="username">amisdevelopment</span>
+            <span class="ig-caption-text">Something extraordinary is taking shape in Meydan. A limited-edition branded community designed for those who seek the rare. Coming soon. Register your interest today.</span>          </div>
+          <div class="ig-time">2 days ago</div>
+        </div>
+        <div class="ig-meta">
+          <div class="ig-meta-label">Post 04 · Detail</div>
+          <div class="ig-meta-pill gold">4:5 Static</div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== Section 02: Teasers ===== -->
+<section class="section" id="reels">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-tag"><span class="tag-num">02</span> Teasers</div>
+      <div>
+        <h2 class="section-title">Six glimpses, <em>one</em> bloom.</h2>
+        <p class="section-desc">A measured sequence in 16:9 — each clip a glint, a gesture, a held breath. Form, light and colour come alive across the feed, one frame at a time, at a pace as intentional as the address itself.</p>
+      </div>
+    </div>
+
+    <div class="reel-grid">
+      <!-- Reel 1 -->
+      <article class="reel-card reveal">
+        <div class="reel-mockup">
+          <iframe class="reel-video" data-yt-id="ymu4n5mDaB8" src="https://www.youtube-nocookie.com/embed/ymu4n5mDaB8?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=ymu4n5mDaB8&amp;controls=0&amp;modestbranding=1&amp;rel=0&amp;playsinline=1&amp;disablekb=1&amp;iv_load_policy=3&amp;enablejsapi=1" frameborder="0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+          <div class="reel-top"><span class="reel-top-label">Teasers</span></div>
+          <div class="reel-play"></div>
+          <div class="reel-side">
+            <div class="reel-side-item heart"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.5 8 3 4 7 4c2 0 3.5 1 5 3 1.5-2 3-3 5-3 4 0 6.5 4 4.5 8C19 16.5 12 21 12 21z"/></svg><span>12.4K</span></div>
+            <div class="reel-side-item"><svg viewBox="0 0 24 24" fill="none"><path d="M21 11.5a8.4 8.4 0 0 1-1 4 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-4-1L3 21l1.9-5.4a8.4 8.4 0 0 1-1-4 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 4-1h.5a8.5 8.5 0 0 1 8 8z"/></svg><span>284</span></div>
+            <div class="reel-side-item"><svg viewBox="0 0 24 24" fill="none"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4z"/></svg><span>Share</span></div>
+            <div class="reel-side-item disc"></div>
+          </div>
+          <div class="reel-bottom">
+            <div class="reel-user">
+              <div class="ig-avatar"><img src="https://mcusercontent.com/03320827781bfef6d5e9f5ead/images/9eddb0bf-fc55-a791-4d23-863ff2a0bd1a.png" data-amis-avatar alt="AMIS Development" /></div>
+              <span class="reel-user-name">amisdevelopment</span>
+              <span class="reel-follow">Follow</span>
+            </div>
+            <div class="reel-caption">Inspired by beauty. Defined by rarity. Fleurs de Jardin, an exclusive branded villa community in Meydan, is coming soon. Be the first to discover it.</div>
+            <div class="reel-audio">Original Audio · Fleurs de Jardin</div>
+          </div>
+        </div>
+        <div class="ig-meta">
+          <div class="ig-meta-label">Teaser 01 · Spark</div>
+          <div class="ig-meta-pill">16:9 Video · 0:09</div>
+        </div>
+      </article>
+
+      <!-- Reel 2 -->
+      <article class="reel-card reveal">
+        <div class="reel-mockup">
+          <iframe class="reel-video" data-yt-id="Yb4Jl71nB6A" src="https://www.youtube-nocookie.com/embed/Yb4Jl71nB6A?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=Yb4Jl71nB6A&amp;controls=0&amp;modestbranding=1&amp;rel=0&amp;playsinline=1&amp;disablekb=1&amp;iv_load_policy=3&amp;enablejsapi=1" frameborder="0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+          <div class="reel-top"><span class="reel-top-label">Teasers</span></div>
+          <div class="reel-play"></div>
+          <div class="reel-side">
+            <div class="reel-side-item heart"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.5 8 3 4 7 4c2 0 3.5 1 5 3 1.5-2 3-3 5-3 4 0 6.5 4 4.5 8C19 16.5 12 21 12 21z"/></svg><span>9.8K</span></div>
+            <div class="reel-side-item"><svg viewBox="0 0 24 24" fill="none"><path d="M21 11.5a8.4 8.4 0 0 1-1 4 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-4-1L3 21l1.9-5.4a8.4 8.4 0 0 1-1-4 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 4-1h.5a8.5 8.5 0 0 1 8 8z"/></svg><span>312</span></div>
+            <div class="reel-side-item"><svg viewBox="0 0 24 24" fill="none"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4z"/></svg><span>Share</span></div>
+            <div class="reel-side-item disc"></div>
+          </div>
+          <div class="reel-bottom">
+            <div class="reel-user">
+              <div class="ig-avatar"><img src="https://mcusercontent.com/03320827781bfef6d5e9f5ead/images/9eddb0bf-fc55-a791-4d23-863ff2a0bd1a.png" data-amis-avatar alt="AMIS Development" /></div>
+              <span class="reel-user-name">amisdevelopment</span>
+              <span class="reel-follow">Follow</span>
+            </div>
+            <div class="reel-caption">The next icon of branded living is about to be revealed. Fleurs de Jardin by Jacob &amp; Co. Coming soon.</div>
+            <div class="reel-audio">Original Audio · Fleurs de Jardin</div>
+          </div>
+        </div>
+        <div class="ig-meta">
+          <div class="ig-meta-label">Teaser 02 · Bloom</div>
+          <div class="ig-meta-pill green">16:9 Video · 0:12</div>
+        </div>
+      </article>
+
+      <!-- Reel 3 -->
+      <article class="reel-card reveal">
+        <div class="reel-mockup">
+          <iframe class="reel-video" data-yt-id="F3MgIzbpw5s" src="https://www.youtube-nocookie.com/embed/F3MgIzbpw5s?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=F3MgIzbpw5s&amp;controls=0&amp;modestbranding=1&amp;rel=0&amp;playsinline=1&amp;disablekb=1&amp;iv_load_policy=3&amp;enablejsapi=1" frameborder="0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+          <div class="reel-top"><span class="reel-top-label">Teasers</span></div>
+          <div class="reel-play"></div>
+          <div class="reel-side">
+            <div class="reel-side-item heart"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.5 8 3 4 7 4c2 0 3.5 1 5 3 1.5-2 3-3 5-3 4 0 6.5 4 4.5 8C19 16.5 12 21 12 21z"/></svg><span>14.2K</span></div>
+            <div class="reel-side-item"><svg viewBox="0 0 24 24" fill="none"><path d="M21 11.5a8.4 8.4 0 0 1-1 4 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-4-1L3 21l1.9-5.4a8.4 8.4 0 0 1-1-4 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 4-1h.5a8.5 8.5 0 0 1 8 8z"/></svg><span>421</span></div>
+            <div class="reel-side-item"><svg viewBox="0 0 24 24" fill="none"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4z"/></svg><span>Share</span></div>
+            <div class="reel-side-item disc"></div>
+          </div>
+          <div class="reel-bottom">
+            <div class="reel-user">
+              <div class="ig-avatar"><img src="https://mcusercontent.com/03320827781bfef6d5e9f5ead/images/9eddb0bf-fc55-a791-4d23-863ff2a0bd1a.png" data-amis-avatar alt="AMIS Development" /></div>
+              <span class="reel-user-name">amisdevelopment</span>
+              <span class="reel-follow">Follow</span>
+            </div>
+            <div class="reel-caption">Introducing Fleurs de Jardin, an exclusive collection of branded luxury villas and mansions in Meydan, designed by Jacob &amp; Co. A rare new address where artistry, elegance, and elevated living come together. Register your interest today.</div>
+            <div class="reel-audio">Original Audio · Fleurs de Jardin</div>
+          </div>
+        </div>
+        <div class="ig-meta">
+          <div class="ig-meta-label">Teaser 03 · Petal</div>
+          <div class="ig-meta-pill pink">16:9 Video · 0:10</div>
+        </div>
+      </article>
+
+      <!-- Reel 4 -->
+      <article class="reel-card reveal">
+        <div class="reel-mockup">
+          <iframe class="reel-video" data-yt-id="zPWbpF00fyw" src="https://www.youtube-nocookie.com/embed/zPWbpF00fyw?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=zPWbpF00fyw&amp;controls=0&amp;modestbranding=1&amp;rel=0&amp;playsinline=1&amp;disablekb=1&amp;iv_load_policy=3&amp;enablejsapi=1" frameborder="0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+          <div class="reel-top"><span class="reel-top-label">Teasers</span></div>
+          <div class="reel-play"></div>
+          <div class="reel-side">
+            <div class="reel-side-item heart"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.5 8 3 4 7 4c2 0 3.5 1 5 3 1.5-2 3-3 5-3 4 0 6.5 4 4.5 8C19 16.5 12 21 12 21z"/></svg><span>17.6K</span></div>
+            <div class="reel-side-item"><svg viewBox="0 0 24 24" fill="none"><path d="M21 11.5a8.4 8.4 0 0 1-1 4 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-4-1L3 21l1.9-5.4a8.4 8.4 0 0 1-1-4 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 4-1h.5a8.5 8.5 0 0 1 8 8z"/></svg><span>510</span></div>
+            <div class="reel-side-item"><svg viewBox="0 0 24 24" fill="none"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4z"/></svg><span>Share</span></div>
+            <div class="reel-side-item disc"></div>
+          </div>
+          <div class="reel-bottom">
+            <div class="reel-user">
+              <div class="ig-avatar"><img src="https://mcusercontent.com/03320827781bfef6d5e9f5ead/images/9eddb0bf-fc55-a791-4d23-863ff2a0bd1a.png" data-amis-avatar alt="AMIS Development" /></div>
+              <span class="reel-user-name">amisdevelopment</span>
+              <span class="reel-follow">Follow</span>
+            </div>
+            <div class="reel-caption">Fleurs de Jardin has arrived. A limited-edition community of branded villas and mansions in Meydan, designed by Jacob &amp; Co. Discover Dubai's rare flower.</div>
+            <div class="reel-audio">Original Audio · Fleurs de Jardin</div>
+          </div>
+        </div>
+        <div class="ig-meta">
+          <div class="ig-meta-label">Teaser 04 · Glow</div>
+          <div class="ig-meta-pill gold">16:9 Video · 0:11</div>
+        </div>
+      </article>
+
+      <!-- Reel 5 -->
+      <article class="reel-card reveal">
+        <div class="reel-mockup">
+          <iframe class="reel-video" data-yt-id="F33D0NJJcRU" src="https://www.youtube-nocookie.com/embed/F33D0NJJcRU?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=F33D0NJJcRU&amp;controls=0&amp;modestbranding=1&amp;rel=0&amp;playsinline=1&amp;disablekb=1&amp;iv_load_policy=3&amp;enablejsapi=1" frameborder="0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+          <div class="reel-top"><span class="reel-top-label">Teasers</span></div>
+          <div class="reel-play"></div>
+          <div class="reel-side">
+            <div class="reel-side-item heart"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.5 8 3 4 7 4c2 0 3.5 1 5 3 1.5-2 3-3 5-3 4 0 6.5 4 4.5 8C19 16.5 12 21 12 21z"/></svg><span>11.3K</span></div>
+            <div class="reel-side-item"><svg viewBox="0 0 24 24" fill="none"><path d="M21 11.5a8.4 8.4 0 0 1-1 4 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-4-1L3 21l1.9-5.4a8.4 8.4 0 0 1-1-4 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 4-1h.5a8.5 8.5 0 0 1 8 8z"/></svg><span>376</span></div>
+            <div class="reel-side-item"><svg viewBox="0 0 24 24" fill="none"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4z"/></svg><span>Share</span></div>
+            <div class="reel-side-item disc"></div>
+          </div>
+          <div class="reel-bottom">
+            <div class="reel-user">
+              <div class="ig-avatar"><img src="https://mcusercontent.com/03320827781bfef6d5e9f5ead/images/9eddb0bf-fc55-a791-4d23-863ff2a0bd1a.png" data-amis-avatar alt="AMIS Development" /></div>
+              <span class="reel-user-name">amisdevelopment</span>
+              <span class="reel-follow">Follow</span>
+            </div>
+            <div class="reel-caption">Welcome to Fleurs de Jardin. A limited-edition branded villa and mansion community in Meydan, designed by Jacob &amp; Co. A rare address for a life beyond the expected.</div>
+            <div class="reel-audio">Original Audio · Fleurs de Jardin</div>
+          </div>
+        </div>
+        <div class="ig-meta">
+          <div class="ig-meta-label">Teaser 05 · Hue</div>
+          <div class="ig-meta-pill blue">16:9 Video · 0:08</div>
+        </div>
+      </article>
+
+      <!-- Reel 6 -->
+      <article class="reel-card reveal">
+        <div class="reel-mockup">
+          <iframe class="reel-video" data-yt-id="Q66oBIGaBY8" src="https://www.youtube-nocookie.com/embed/Q66oBIGaBY8?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=Q66oBIGaBY8&amp;controls=0&amp;modestbranding=1&amp;rel=0&amp;playsinline=1&amp;disablekb=1&amp;iv_load_policy=3&amp;enablejsapi=1" frameborder="0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+          <div class="reel-top"><span class="reel-top-label">Teasers</span></div>
+          <div class="reel-play"></div>
+          <div class="reel-side">
+            <div class="reel-side-item heart"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.5 8 3 4 7 4c2 0 3.5 1 5 3 1.5-2 3-3 5-3 4 0 6.5 4 4.5 8C19 16.5 12 21 12 21z"/></svg><span>21.9K</span></div>
+            <div class="reel-side-item"><svg viewBox="0 0 24 24" fill="none"><path d="M21 11.5a8.4 8.4 0 0 1-1 4 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-4-1L3 21l1.9-5.4a8.4 8.4 0 0 1-1-4 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 4-1h.5a8.5 8.5 0 0 1 8 8z"/></svg><span>684</span></div>
+            <div class="reel-side-item"><svg viewBox="0 0 24 24" fill="none"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4z"/></svg><span>Share</span></div>
+            <div class="reel-side-item disc"></div>
+          </div>
+          <div class="reel-bottom">
+            <div class="reel-user">
+              <div class="ig-avatar"><img src="https://mcusercontent.com/03320827781bfef6d5e9f5ead/images/9eddb0bf-fc55-a791-4d23-863ff2a0bd1a.png" data-amis-avatar alt="AMIS Development" /></div>
+              <span class="reel-user-name">amisdevelopment</span>
+              <span class="reel-follow">Follow</span>
+            </div>
+            <div class="reel-caption">A residence. A statement. A rare work of art. Fleurs de Jardin introduces branded luxury villas and mansions in Meydan, designed by Jacob &amp; Co.</div>
+            <div class="reel-audio">Original Audio · Fleurs de Jardin</div>
+          </div>
+        </div>
+        <div class="ig-meta">
+          <div class="ig-meta-label">Teaser 06 · Reveal</div>
+          <div class="ig-meta-pill">16:9 Video · 0:15</div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== Section 03: Landing Page Mockup ===== -->
+<section class="section" id="landing">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-tag"><span class="tag-num">03</span> Project Landing Page</div>
+      <div>
+        <h2 class="section-title">Where the <em>campaign</em> comes to rest.</h2>
+        <p class="section-desc">The online home for Fleurs de Jardin — a quiet stage where every click from the campaign is gathered. Considered, uncluttered, designed in the same temperament as the address itself.</p>
+      </div>
+    </div>
+
+    <div class="browser-frame reveal">
+      <div class="browser-bar">
+        <div class="browser-dots"><span></span><span></span><span></span></div>
+        <div class="browser-url">amisdevelopment.com/fleursdejardin</div>
+      </div>
+      <div class="browser-body">
+        <img class="lp-mockup" src="https://mcusercontent.com/03320827781bfef6d5e9f5ead/images/887be212-3a49-88f0-cce9-272b7ee9484f.jpg" alt="Fleurs de Jardin landing page mockup" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-logo">
+    <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAxMDAwIDMwMC42NSI+CiAgPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDMwLjMuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDIuMS4zIEJ1aWxkIDE4MikgIC0tPgogIDxkZWZzPgogICAgPHN0eWxlPgogICAgICAuc3QwIHsKICAgICAgICBmaWxsOiAjZWZhODY1OwogICAgICB9CiAgICA8L3N0eWxlPgogIDwvZGVmcz4KICA8cGF0aCBjbGFzcz0ic3QwIiBkPSJNMjcwLjY2LDI0OS4yaDBjNi40LTQuMTYsOS4yLTEyLjEsNi44NC0xOS4zNmwtNTIuNTktMTMxLjcyLTUyLjU5LDEzMS43MmMtMi4zNyw3LjI2LjQ0LDE1LjIsNi44NCwxOS4zNmgwcy00OS44OCwwLTQ5Ljg4LDBoMGM5Ljg3LTUuOTUsMTcuODEtMTQuNjIsMjIuODgtMjQuOTYsMi45LTUuOTIsNi41MS0xMy44MSwxMC45Mi0yNC4zM2w2MS44My0xNDcuNDYsNjEuODMsMTQ3LjQ2YzYuNjcsMTUuOSwxMS41LDI1LjgxLDE0Ljg0LDMxLjk2LDMuMTMsNS43Niw3Ljc0LDEwLjU2LDEzLjM1LDEzLjk1bDUuNjIsMy4zOWgtNDkuODlaIi8+CiAgPHBhdGggY2xhc3M9InN0MCIgZD0iTTQwOC44MywxMTkuODNzLTMuOTQsNzkuNzEtNS4wOCwxMDcuOTRjLS4zNSw4LjczLDQuMSwxNi45NCwxMS42MSwyMS40MWgwcy01MC4xMywwLTUwLjEzLDBoMGM3LjYtNC43NywxMy4yMy0xMi4xLDE1Ljg3LTIwLjY3bC40LTEuMzFjLjgzLTIuNjgsMS4zNS01LjQ1LDEuNTUtOC4yNGwxMi4zMy0xNjYuNDgsODEuODQsMTUzLjYsODEuODQtMTUzLjYuNzYsMTQuNzZjLjczLDE0LjE0LDkuNzEsMTI4LjM3LDExLjU1LDE1MS43Ni4yMiwyLjc4Ljc1LDUuNTIsMS41Nyw4LjE4bC40MywxLjM5YzIuNjYsOC41Nyw4LjMsMTUuOSwxNS45LDIwLjY3aDBzLTEzLjk2LS4wNC0xMy45Ni0uMDRoLTM2LjIzLDBjNy40OS00LjQ2LDExLjkyLTEyLjY5LDExLjUyLTIxLjRsLTQuOTktMTA3Ljk1LTY4LjM4LDEyOS4zNS02OC4zOC0xMjkuMzVaIi8+CiAgPHBhdGggY2xhc3M9InN0MCIgZD0iTTYzMy45NCwyNDkuMTloMGM3LjIxLTQuODQsMTEuODEtMTIuNywxMi40OS0yMS4zNWgwYzEuMzgtMTcuMzUsMi4wNi0zNC43NCwyLjA2LTUyLjE1di01MC4yMmMwLTE3LjIzLS42OS0zNC40Ni0yLjA2LTUxLjYzaDBjLS42OS04LjY1LTUuMjktMTYuNTItMTIuNS0yMS4zNmgwczQ4LjUzLDAsNDguNTMsMGgwYy03LjIxLDQuODQtMTEuODEsMTIuNy0xMi41LDIxLjM2aDBjLTEuMzcsMTcuMTgtMi4wNiwzNC40LTIuMDYsNTEuNjN2NTAuMjJjMCwxNy40LjY5LDM0LjgsMi4wNiw1Mi4xNWgwYy42OSw4LjY1LDUuMjksMTYuNTEsMTIuNDksMjEuMzVoMHMtNDguNTIsMC00OC41MiwwWiIvPgogIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik04MjUuMDcsMTQ0LjEybC0yOC4xMy0xMi4yOC0uMjItLjA5Yy0xNC4zNi01LjY2LTMyLjIzLTEyLjcxLTMyLjIzLTMxLjA3LDAtMTcuMTEsMTUuMzUtMzAuMTcsMzkuMS0zMC4xNywxNy41NSwwLDMyLjQzLDcuODIsNDQuMjIsMTkuMjlsMS4yMSwxLjE4aDBsLS4zMSw1LjE2LDkuMzMtOS4zMywxMC43OC0xMC43OC01LjU1LjY5LTEuMi0xLjE4Yy0xNC44NS0xNC42Ny0zNi4wOC0yNS4wOC01OC4yNS0yNS4wOC0zNS43NywwLTYxLjcyLDIyLjYtNjEuNzIsNTAuOTksMCwzMS42NCwzMC4zMiw0My44Miw0My4zNSw0OS4wM2wyOC40NSwxMi4zOWMyMC44Myw4LjU1LDMzLjU5LDE0Ljc4LDMzLjU5LDM0LjI4cy0xNy40MiwzMy45OC00NC4zOSwzMy45OGMtMjAuNTcsMC00MC4zOC0xMC40MS01NC4zNS0yNS4wOWwtMS4yLTEuMjYuMzEtNS4xNS05Ljk1LDkuOTUtMTAuNzgsMTAuNzgsNS41NS0uNy4wMi0uMDIuNy43NGMxMi41MSwxMy4xMywzNC43MSwzMC43OSw2OS4zOSwzMC43OSwzOS41NSwwLDY3LjE3LTIzLjg2LDY3LjE3LTU1LjE3cy0yMy4xNi00My4xMi00NC45LTUxLjg5WiIvPgo8L3N2Zz4=" alt="AMIS Development" />
+  </div>
+  <div class="footer-text">
+    Fleurs de Jardin · Pre-Launch Marketing Plan · AMIS Development · Draft v0.1
+  </div>
+</footer>
+
+<script>
+  // Reveal on scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // YouTube reel videos: autoplay muted via embed params; mute toggle + viewport pause via IFrame API
+  const muteIcons = `
+    <svg class="icon-mute" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" fill="currentColor" stroke="none"/>
+      <line x1="23" y1="9" x2="17" y2="15"/>
+      <line x1="17" y1="9" x2="23" y2="15"/>
+    </svg>
+    <svg class="icon-unmute" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" fill="currentColor" stroke="none"/>
+      <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+      <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+    </svg>`;
+
+  // Inject mute toggle into each reel mockup
+  document.querySelectorAll('.reel-mockup').forEach(mockup => {
+    const iframe = mockup.querySelector('iframe.reel-video');
+    if (!iframe) return;
+    const muteBtn = document.createElement('button');
+    muteBtn.type = 'button';
+    muteBtn.className = 'reel-mute';
+    muteBtn.setAttribute('aria-label', 'Toggle sound');
+    muteBtn.innerHTML = muteIcons;
+    mockup.appendChild(muteBtn);
+  });
+
+  // Send a YT player command via postMessage (works without loading the YT API library)
+  function ytCommand(iframe, func, args) {
+    const msg = JSON.stringify({ event: 'command', func, args: args || [] });
+    try { iframe.contentWindow.postMessage(msg, '*'); } catch (e) {}
+  }
+
+  // Wire mute buttons
+  document.querySelectorAll('.reel-mute').forEach(btn => {
+    const mockup = btn.closest('.reel-mockup');
+    const iframe = mockup.querySelector('iframe.reel-video');
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const willMute = btn.classList.contains('unmuted'); // currently unmuted -> will mute
+      if (willMute) {
+        ytCommand(iframe, 'mute');
+        btn.classList.remove('unmuted');
+        btn.setAttribute('aria-label', 'Unmute');
+      } else {
+        ytCommand(iframe, 'unMute');
+        btn.classList.add('unmuted');
+        btn.setAttribute('aria-label', 'Mute');
+      }
+    });
+  });
+
+  // Pause videos when out of view, resume when back in view (uses YT postMessage API)
+  const reelIO = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const iframe = entry.target;
+      if (entry.isIntersecting) {
+        ytCommand(iframe, 'playVideo');
+      } else {
+        ytCommand(iframe, 'pauseVideo');
+      }
+    });
+  }, { threshold: 0.35 });
+  document.querySelectorAll('iframe.reel-video').forEach(f => reelIO.observe(f));
+</script>
+
+</body>
+</html>
