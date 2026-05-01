@@ -778,6 +778,52 @@
   .reel-mockup.errored .reel-error { display: flex; }
   .reel-mockup.errored .reel-play { opacity: 0; }
 
+  /* Pause button — only visible while playing AND mockup is hovered */
+  .reel-pause {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%) scale(0.85);
+    width: 64px; height: 64px;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.55);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+    opacity: 0;
+    pointer-events: none;
+    border: 1.5px solid rgba(255,255,255,0.45);
+    box-shadow: 0 10px 28px -8px rgba(0,0,0,0.5);
+    cursor: pointer;
+    transition: opacity 0.25s ease, transform 0.3s cubic-bezier(.2,.8,.2,1), background 0.3s;
+  }
+  .reel-pause::before,
+  .reel-pause::after {
+    content: "";
+    width: 6px; height: 22px;
+    background: #fff;
+    border-radius: 1px;
+  }
+  .reel-pause::before { margin-right: 4px; }
+  .reel-mockup.playing:hover .reel-pause {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  .reel-mockup.playing:hover .reel-pause:hover {
+    background: rgba(0,0,0,0.7);
+    transform: translate(-50%, -50%) scale(1.06);
+  }
+  /* When not playing, play button is visible and clickable */
+  .reel-play {
+    pointer-events: auto;
+  }
+  .reel-mockup.playing .reel-play {
+    pointer-events: none;
+  }
+
   .reel-mute {
     position: absolute;
     top: 12px;
@@ -1626,7 +1672,7 @@
           <div class="ig-likes">2,481 likes</div>
           <div class="ig-caption">
             <span class="username">amisdevelopment</span>
-            <span class="ig-caption-text">A rare new chapter of branded living is about to bloom in Meydan. Fleurs de Jardin, designed by Jacob &amp; Co., is coming soon. Register your interest to be among the first to discover more.</span>          </div>
+            <span class="ig-caption-text">A rare new chapter of branded living is about to bloom in Meydan. Fleurs de Jardin, designed by Jacob &amp; Co., is launching soon. Register your interest to be among the first to discover more.</span>          </div>
           <div class="ig-time">2 hours ago</div>
         </div>
         <div class="ig-meta">
@@ -1657,7 +1703,7 @@
           <div class="ig-likes">3,108 likes</div>
           <div class="ig-caption">
             <span class="username">amisdevelopment</span>
-            <span class="ig-caption-text">Dubai's rare flower is preparing to bloom. An exclusive limited-edition branded villa community is coming soon to Meydan. Register now for early details.</span>          </div>
+            <span class="ig-caption-text">Dubai's rare flower is preparing to bloom. An exclusive limited-edition branded villa community is launching soon to Meydan. Register now for early details.</span>          </div>
           <div class="ig-time">5 hours ago</div>
         </div>
         <div class="ig-meta">
@@ -1688,7 +1734,7 @@
           <div class="ig-likes">4,602 likes</div>
           <div class="ig-caption">
             <span class="username">amisdevelopment</span>
-            <span class="ig-caption-text">A world of rarity, artistry, and branded luxury is coming soon. Fleurs de Jardin by Jacob &amp; Co. Meydan's most exclusive new address awaits.</span>          </div>
+            <span class="ig-caption-text">A world of rarity, artistry, and branded luxury is launching soon. Fleurs de Jardin by Jacob &amp; Co. Meydan's most exclusive new address awaits.</span>          </div>
           <div class="ig-time">1 day ago</div>
         </div>
         <div class="ig-meta">
@@ -1719,7 +1765,7 @@
           <div class="ig-likes">5,127 likes</div>
           <div class="ig-caption">
             <span class="username">amisdevelopment</span>
-            <span class="ig-caption-text">Something extraordinary is taking shape in Meydan. A limited-edition branded community designed for those who seek the rare. Coming soon. Register your interest today.</span>          </div>
+            <span class="ig-caption-text">Something extraordinary is taking shape in Meydan. A limited-edition branded community designed for those who seek the rare. Launching soon. Register your interest today.</span>          </div>
           <div class="ig-time">2 days ago</div>
         </div>
         <div class="ig-meta">
@@ -1762,7 +1808,7 @@
               <span class="reel-user-name">amisdevelopment</span>
               <span class="reel-follow">Follow</span>
             </div>
-            <div class="reel-caption">Inspired by beauty. Defined by rarity. Fleurs de Jardin, an exclusive branded villa community in Meydan, is coming soon. Be the first to discover it.</div>
+            <div class="reel-caption">Inspired by beauty. Defined by rarity. Fleurs de Jardin, an exclusive branded villa community in Meydan, is launching soon. Be the first to discover it.</div>
             <div class="reel-audio">Original Audio · Fleurs de Jardin</div>
           </div>
         </div>
@@ -1790,7 +1836,7 @@
               <span class="reel-user-name">amisdevelopment</span>
               <span class="reel-follow">Follow</span>
             </div>
-            <div class="reel-caption">The next icon of branded living is about to be revealed. Fleurs de Jardin by Jacob &amp; Co. Coming soon.</div>
+            <div class="reel-caption">The next icon of branded living is about to be revealed. Fleurs de Jardin by Jacob &amp; Co. Launching soon.</div>
             <div class="reel-audio">Original Audio · Fleurs de Jardin</div>
           </div>
         </div>
@@ -1973,31 +2019,41 @@
       <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
     </svg>`;
 
-  // Inject mute toggle into each reel mockup
+  // Inject mute + pause buttons into each reel mockup; assume playing because we autoplay
   document.querySelectorAll('.reel-mockup').forEach(mockup => {
     const iframe = mockup.querySelector('iframe.reel-video');
     if (!iframe) return;
+
     const muteBtn = document.createElement('button');
     muteBtn.type = 'button';
     muteBtn.className = 'reel-mute';
     muteBtn.setAttribute('aria-label', 'Toggle sound');
     muteBtn.innerHTML = muteIcons;
     mockup.appendChild(muteBtn);
+
+    const pauseBtn = document.createElement('button');
+    pauseBtn.type = 'button';
+    pauseBtn.className = 'reel-pause';
+    pauseBtn.setAttribute('aria-label', 'Pause');
+    mockup.appendChild(pauseBtn);
+
+    // Videos autoplay on load — start in playing state
+    mockup.classList.add('playing');
   });
 
-  // Send a YT player command via postMessage (works without loading the YT API library)
+  // Send a YT player command via postMessage
   function ytCommand(iframe, func, args) {
     const msg = JSON.stringify({ event: 'command', func, args: args || [] });
     try { iframe.contentWindow.postMessage(msg, '*'); } catch (e) {}
   }
 
-  // Wire mute buttons
+  // Wire mute, play and pause buttons
   document.querySelectorAll('.reel-mute').forEach(btn => {
     const mockup = btn.closest('.reel-mockup');
     const iframe = mockup.querySelector('iframe.reel-video');
     btn.addEventListener('click', (e) => {
       e.stopPropagation();
-      const willMute = btn.classList.contains('unmuted'); // currently unmuted -> will mute
+      const willMute = btn.classList.contains('unmuted');
       if (willMute) {
         ytCommand(iframe, 'mute');
         btn.classList.remove('unmuted');
@@ -2010,14 +2066,58 @@
     });
   });
 
+  document.querySelectorAll('.reel-mockup').forEach(mockup => {
+    const iframe = mockup.querySelector('iframe.reel-video');
+    if (!iframe) return;
+    const playBtn = mockup.querySelector('.reel-play');
+    const pauseBtn = mockup.querySelector('.reel-pause');
+    if (playBtn) playBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      ytCommand(iframe, 'playVideo');
+      mockup.classList.add('playing');
+    });
+    if (pauseBtn) pauseBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      ytCommand(iframe, 'pauseVideo');
+      mockup.classList.remove('playing');
+    });
+  });
+
+  // Listen to YouTube state changes so the play/pause overlays reflect actual state
+  document.querySelectorAll('iframe.reel-video').forEach(f => {
+    f.addEventListener('load', () => {
+      try { f.contentWindow.postMessage(JSON.stringify({ event: 'listening' }), '*'); } catch (e) {}
+    });
+  });
+  window.addEventListener('message', (e) => {
+    if (!String(e.origin).includes('youtube')) return;
+    let data;
+    try { data = typeof e.data === 'string' ? JSON.parse(e.data) : e.data; } catch (_) { return; }
+    const playerState = (data && data.info && typeof data.info.playerState !== 'undefined')
+      ? data.info.playerState
+      : (data && typeof data.info === 'number' ? data.info : null);
+    if (playerState == null) return;
+    document.querySelectorAll('iframe.reel-video').forEach(f => {
+      if (f.contentWindow === e.source) {
+        const mockup = f.closest('.reel-mockup');
+        if (!mockup) return;
+        if (playerState === 1) mockup.classList.add('playing'); // PLAYING
+        else if (playerState === 2 || playerState === 0) mockup.classList.remove('playing'); // PAUSED or ENDED
+      }
+    });
+  });
+
   // Pause videos when out of view, resume when back in view (uses YT postMessage API)
   const reelIO = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       const iframe = entry.target;
+      const mockup = iframe.closest('.reel-mockup');
       if (entry.isIntersecting) {
         ytCommand(iframe, 'playVideo');
+        if (mockup) mockup.classList.add('playing');
       } else {
         ytCommand(iframe, 'pauseVideo');
+        if (mockup) mockup.classList.remove('playing');
       }
     });
   }, { threshold: 0.35 });
