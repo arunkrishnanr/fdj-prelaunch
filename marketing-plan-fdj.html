@@ -172,9 +172,10 @@
   }
   .hero-meta {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
-    max-width: 900px;
+    grid-template-columns: repeat(4, auto);
+    justify-content: center;
+    gap: 24px 56px;
+    max-width: 1200px;
     margin: 60px auto 0;
     padding-top: 30px;
     border-top: 1px solid var(--line);
@@ -190,13 +191,20 @@
   }
   .hero-meta dd {
     font-family: 'Fraunces', serif;
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 400;
+    white-space: nowrap;
   }
 
+  @media (max-width: 900px) {
+    .hero-meta { grid-template-columns: repeat(2, auto); gap: 22px 40px; }
+  }
+  @media (max-width: 480px) {
+    .hero-meta { grid-template-columns: 1fr; gap: 20px; }
+    .hero-meta dd { white-space: normal; font-size: 15px; }
+  }
   @media (max-width: 768px) {
     .hero { padding: 16px 20px 9px; }
-    .hero-meta { grid-template-columns: repeat(2, 1fr); gap: 20px; }
   }
 
   /* ===== Section ===== */
@@ -220,40 +228,47 @@
   }
   .section-tag {
     font-family: 'Space Grotesk', sans-serif;
-    font-size: 13px;
+    font-size: 22px;
     text-transform: uppercase;
     letter-spacing: 0.18em;
     color: var(--accent);
     display: inline-flex;
     align-items: center;
-    gap: 12px;
+    gap: 18px;
+    font-weight: 500;
   }
   .section-tag .tag-num {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 28px; height: 28px;
+    width: 44px; height: 44px;
     border-radius: 50%;
     background: var(--accent);
     color: #fff;
     font-weight: 600;
+    font-size: 16px;
+  }
+  @media (max-width: 768px) {
+    .section-tag { font-size: 16px; gap: 14px; letter-spacing: 0.14em; }
+    .section-tag .tag-num { width: 34px; height: 34px; font-size: 13px; }
   }
   .section-title {
     font-family: 'Fraunces', serif;
     font-weight: 300;
-    font-size: clamp(36px, 5.5vw, 84px);
-    line-height: 1;
-    letter-spacing: -0.03em;
+    font-size: clamp(26px, 3.6vw, 48px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
   }
   .section-title em {
     font-style: italic;
     color: var(--accent);
   }
   .section-desc {
-    font-size: 17px;
+    font-size: 14px;
+    line-height: 1.6;
     color: var(--ink-dim);
-    max-width: 600px;
-    margin: 24px auto 0;
+    max-width: 540px;
+    margin: 18px auto 0;
   }
 
   @media (max-width: 900px) {
@@ -267,8 +282,42 @@
     gap: 50px 40px;
   }
   .ig-grid.two-up { grid-template-columns: repeat(2, 1fr); gap: 50px 40px; max-width: 1100px; margin: 0 auto; }
-  @media (max-width: 1100px) { .ig-grid { grid-template-columns: repeat(2, 1fr); } }
-  @media (max-width: 640px) { .ig-grid, .ig-grid.two-up { grid-template-columns: 1fr; gap: 40px; } }
+  .ig-grid.three-up { grid-template-columns: repeat(3, 1fr); gap: 40px 28px; }
+  @media (max-width: 1100px) {
+    .ig-grid { grid-template-columns: repeat(2, 1fr); }
+    .ig-grid.three-up { grid-template-columns: repeat(2, 1fr); gap: 50px 40px; max-width: 1100px; margin: 0 auto; }
+  }
+  @media (max-width: 640px) { .ig-grid, .ig-grid.two-up, .ig-grid.three-up { grid-template-columns: 1fr; gap: 40px; max-width: 100%; } }
+
+  /* Subsection header — small eyebrow used to label clusters inside a section */
+  :root { --subsection-gap: 90px; }
+  .subsection-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin: var(--subsection-gap) auto 36px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    color: var(--ink-dim);
+    text-align: center;
+  }
+  .subsection-header::before,
+  .subsection-header::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--line);
+    max-width: 120px;
+  }
+  .subsection-header:first-child { margin-top: 0; }
+  @media (max-width: 768px) {
+    :root { --subsection-gap: 60px; }
+    .subsection-header { font-size: 11px; letter-spacing: 0.16em; }
+    .subsection-header::before, .subsection-header::after { max-width: 60px; }
+  }
 
   /* Instagram 4:5 mockup */
   .ig-card {
@@ -580,7 +629,16 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 40px 30px;
   }
-  @media (max-width: 800px) { .reel-grid { grid-template-columns: 1fr; gap: 30px; } }
+  .reel-grid.three-up { grid-template-columns: repeat(3, 1fr); gap: 30px 24px; }
+  /* When the last row in a 3-up grid has 2 items, center them */
+  .reel-grid.three-up > .reel-card:nth-last-child(2):nth-child(3n + 1) { grid-column-start: 1; }
+  .reel-grid.three-up > .reel-card:last-child:nth-child(3n + 2) { /* leave the orphan in place */ }
+  /* Use grid-row-end + auto-placement; for a 5-item layout (3+2), shift the bottom row right by 0.5 col-gap */
+  .reel-grid.single { grid-template-columns: 1fr; max-width: 1100px; margin: 0 auto; }
+  .reel-grid.featured { grid-template-columns: 1fr; max-width: 1280px; margin: 0 auto; gap: 0; }
+  .reel-grid.featured .reel-mockup { border-radius: 22px; }
+  @media (max-width: 1000px) { .reel-grid.three-up { grid-template-columns: repeat(2, 1fr); gap: 40px 30px; } }
+  @media (max-width: 800px) { .reel-grid, .reel-grid.three-up { grid-template-columns: 1fr; gap: 30px; } }
 
   .reel-card { display: flex; flex-direction: column; gap: 18px; }
   .reel-mockup {
@@ -610,6 +668,31 @@
     background: #000;
     border: 0;
     display: block;
+  }
+  .reel-thumbnail {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    display: block;
+    user-select: none;
+    -webkit-user-drag: none;
+  }
+  /* Launch film: click-to-play. Play button stays visible until user taps. */
+  .reel-mockup.launch-film { cursor: pointer; }
+  .reel-mockup.launch-film .reel-play {
+    opacity: 1;
+    pointer-events: auto;
+    width: 84px; height: 84px;
+  }
+  .reel-mockup.launch-film .reel-play::after {
+    border-left-width: 22px;
+    border-top-width: 14px;
+    border-bottom-width: 14px;
+  }
+  .reel-mockup.launch-film:hover .reel-play {
+    transform: translate(-50%, -50%) scale(1.06);
+    background: rgba(0,0,0,0.7);
   }
   .reel-bg.gr-1 {
     background:
@@ -1253,6 +1336,65 @@
     position: relative;
     overflow: hidden;
   }
+
+  /* Collapsible landing-page container */
+  .landing-collapse {
+    position: relative;
+    transition: padding 0.3s ease;
+  }
+  .landing-collapse[data-collapsed="true"] .browser-frame {
+    max-height: 760px;
+    overflow: hidden;
+    position: relative;
+  }
+  .landing-collapse[data-collapsed="true"] .browser-frame::after {
+    content: "";
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    height: 240px;
+    pointer-events: none;
+    background: linear-gradient(180deg, rgba(10,10,10,0) 0%, rgba(10,10,10,0.55) 50%, rgba(10,10,10,0.92) 100%);
+  }
+  .landing-collapse .browser-frame { transition: max-height 0.5s cubic-bezier(.2,.8,.2,1); }
+
+  .landing-toggle {
+    margin: -28px auto 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 26px;
+    border: 1px solid var(--accent);
+    background: rgba(10,10,10,0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: var(--accent);
+    border-radius: 999px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    cursor: pointer;
+    position: relative;
+    z-index: 5;
+    transition: background 0.2s, color 0.2s, transform 0.3s cubic-bezier(.2,.8,.2,1);
+  }
+  .landing-toggle:hover {
+    background: var(--accent);
+    color: #fff;
+  }
+  .landing-toggle-chevron {
+    display: inline-block;
+    transition: transform 0.3s cubic-bezier(.2,.8,.2,1);
+  }
+  .landing-collapse[data-collapsed="false"] .landing-toggle-chevron {
+    transform: rotate(180deg);
+  }
+  .landing-collapse {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .landing-collapse > .browser-frame { width: 100%; }
   .lp-mockup {
     width: 100%;
     height: auto;
@@ -1603,15 +1745,14 @@
       </div>
       <div>
         <dt>Channels</dt>
-        <dd>Instagram · Web · Event</dd>
+        <dd>Social Media · Web · Event</dd>
       </div>
     </dl>
 
     <nav class="hero-nav" aria-label="Sections">
-      <a href="#static">01 Static Posts</a>
-      <a href="#reels">02 Teasers</a>
+      <a href="#teaser">01 Teaser Campaign</a>
+      <a href="#prelaunch">02 Pre-launch Campaign</a>
       <a href="#launch">03 Launch Campaign</a>
-      <a href="#landing">04 Landing Page</a>
     </nav>
   </div>
 </header>
@@ -1638,19 +1779,20 @@
   </div>
 </div>
 
-<!-- ===== Section 01: Instagram Static Posts ===== -->
-<section class="section" id="static">
+<!-- ===== Section 01: Teaser Campaign ===== -->
+<section class="section" id="teaser">
   <div class="section-inner">
     <div class="section-header reveal">
-      <div class="section-tag"><span class="tag-num">01</span> Instagram Static Posts</div>
+      <div class="section-tag"><span class="tag-num">01</span> Teaser Campaign</div>
       <div>
         <h2 class="section-title">Slowly, the <em>garden</em> reveals itself.</h2>
-        <p class="section-desc">Four stills. Four quiet invitations. Each frame chosen not by chance, but by instinct — a hue, a hint, a half-spoken promise of what is taking shape in Meydan.</p>
+        <p class="section-desc">The teaser chapter. Three quiet stills, one moving glimpse, and the digital home for the campaign — together, the first whispers of Fleurs de Jardin entering the world.</p>
       </div>
     </div>
 
-    <div class="ig-grid two-up">
+    <div class="subsection-header"><span>Static Posts</span></div>
 
+    <div class="ig-grid three-up">
       <!-- Post 1 -->
       <article class="ig-card reveal">
         <div class="ig-mockup">
@@ -1681,7 +1823,6 @@
           <div class="ig-meta-pill">4:5 Static</div>
         </div>
       </article>
-
       <!-- Post 2 -->
       <article class="ig-card reveal">
         <div class="ig-mockup">
@@ -1712,7 +1853,6 @@
           <div class="ig-meta-pill green">4:5 Static</div>
         </div>
       </article>
-
       <!-- Post 3 -->
       <article class="ig-card reveal">
         <div class="ig-mockup">
@@ -1743,54 +1883,11 @@
           <div class="ig-meta-pill pink">4:5 Static</div>
         </div>
       </article>
-
-      <!-- Post 4 -->
-      <article class="ig-card reveal">
-        <div class="ig-mockup">
-          <div class="ig-header">
-            <div class="ig-user">
-              <div class="ig-avatar"><img src="https://mcusercontent.com/03320827781bfef6d5e9f5ead/images/9eddb0bf-fc55-a791-4d23-863ff2a0bd1a.png" data-amis-avatar alt="AMIS Development profile picture" /></div>
-              <div class="ig-username">amisdevelopment<span class="verified"></span></div>
-            </div>
-            <div class="ig-dots">⋯</div>
-          </div>
-          <div class="ig-image"><img src="https://mcusercontent.com/03320827781bfef6d5e9f5ead/images/349e0e15-81d7-5abe-418b-c595bae8c7ea.png" alt="Static Post 04" /></div>
-          <div class="ig-actions">
-            <div class="ig-actions-left">
-              <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.5 8 3 4 7 4c2 0 3.5 1 5 3 1.5-2 3-3 5-3 4 0 6.5 4 4.5 8C19 16.5 12 21 12 21z"/></svg>
-              <svg viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-1 4 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-4-1L3 21l1.9-5.4a8.4 8.4 0 0 1-1-4 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 4-1h.5a8.5 8.5 0 0 1 8 8z"/></svg>
-              <svg viewBox="0 0 24 24"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4z"/></svg>
-            </div>
-            <svg viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
-          </div>
-          <div class="ig-likes">5,127 likes</div>
-          <div class="ig-caption">
-            <span class="username">amisdevelopment</span>
-            <span class="ig-caption-text">Something extraordinary is taking shape in Meydan. A limited-edition branded community designed for those who seek the rare. Launching soon. Register your interest today.</span>          </div>
-          <div class="ig-time">2 days ago</div>
-        </div>
-        <div class="ig-meta">
-          <div class="ig-meta-label">Post 04 · Detail</div>
-          <div class="ig-meta-pill gold">4:5 Static</div>
-        </div>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-<!-- ===== Section 02: Teasers ===== -->
-<section class="section" id="reels">
-  <div class="section-inner">
-    <div class="section-header reveal">
-      <div class="section-tag"><span class="tag-num">02</span> Teasers</div>
-      <div>
-        <h2 class="section-title">Six glimpses, <em>one</em> bloom.</h2>
-        <p class="section-desc">A measured sequence in 16:9 — each clip a glint, a gesture, a held breath. Form, light and colour come alive across the feed, one frame at a time, at a pace as intentional as the address itself.</p>
-      </div>
     </div>
 
-    <div class="reel-grid">
+    <div class="subsection-header"><span>Teaser Film</span></div>
+
+    <div class="reel-grid single">
       <!-- Reel 1 -->
       <article class="reel-card reveal">
         <div class="reel-mockup">
@@ -1818,7 +1915,172 @@
           <div class="ig-meta-pill">16:9 Video · 0:09</div>
         </div>
       </article>
+    </div>
 
+    <div class="subsection-header"><span>Landing Page</span></div>
+
+    <!-- Landing page (collapsible — preview by default, click to expand) -->
+    <div class="landing-collapse" data-collapsed="true">
+      <div class="browser-frame reveal">
+      <div class="browser-bar">
+        <div class="browser-dots"><span></span><span></span><span></span></div>
+        <div class="browser-url">amisdevelopment.com/fleursdejardin</div>
+      </div>
+      <div class="browser-body">
+        <img class="lp-mockup" src="https://mcusercontent.com/03320827781bfef6d5e9f5ead/images/0571880b-7de2-1ee2-33cb-bd1b94d1a65e.jpg" alt="Fleurs de Jardin landing page mockup" />
+      </div>
+    </div>
+      <button type="button" class="landing-toggle" aria-expanded="false">
+        <span class="landing-toggle-label">Expand to full page</span>
+        <span class="landing-toggle-chevron" aria-hidden="true">↓</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Section 02: Pre-launch Campaign ===== -->
+<section class="section" id="prelaunch">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-tag"><span class="tag-num">02</span> Pre-launch Campaign</div>
+      <div>
+        <h2 class="section-title">On the verge of <em>bloom</em>.</h2>
+        <p class="section-desc">The pre-launch chapter. Four invitations across the feed, then five cinematic glimpses — the rhythm tightens, anticipation gathers. Register your interest before the doors open.</p>
+      </div>
+    </div>
+
+    <div class="subsection-header"><span>Static Posts</span></div>
+
+    <div class="ig-grid two-up">
+      <!-- Saved static post 4 -->
+      <article class="ig-card reveal">
+        <div class="ig-mockup">
+          <div class="ig-header">
+            <div class="ig-user">
+              <div class="ig-avatar"><img src="https://mcusercontent.com/03320827781bfef6d5e9f5ead/images/9eddb0bf-fc55-a791-4d23-863ff2a0bd1a.png" data-amis-avatar alt="AMIS Development profile picture" /></div>
+              <div class="ig-username">amisdevelopment<span class="verified"></span></div>
+            </div>
+            <div class="ig-dots">⋯</div>
+          </div>
+          <div class="ig-image"><img src="https://mcusercontent.com/03320827781bfef6d5e9f5ead/images/349e0e15-81d7-5abe-418b-c595bae8c7ea.png" alt="Static Post 04" /></div>
+          <div class="ig-actions">
+            <div class="ig-actions-left">
+              <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.5 8 3 4 7 4c2 0 3.5 1 5 3 1.5-2 3-3 5-3 4 0 6.5 4 4.5 8C19 16.5 12 21 12 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-1 4 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-4-1L3 21l1.9-5.4a8.4 8.4 0 0 1-1-4 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 4-1h.5a8.5 8.5 0 0 1 8 8z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4z"/></svg>
+            </div>
+            <svg viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <div class="ig-likes">5,127 likes</div>
+          <div class="ig-caption">
+            <span class="username">amisdevelopment</span>
+            <span class="ig-caption-text">Something extraordinary is taking shape in Meydan. A limited-edition branded community designed for those who seek the rare. Launching soon. Register your interest today.</span>          </div>
+          <div class="ig-time">2 days ago</div>
+        </div>
+        <div class="ig-meta">
+          <div class="ig-meta-label">Pre-launch 01 · Teaser</div>
+          <div class="ig-meta-pill gold">4:5 Static</div>
+        </div>
+      </article>
+      <!-- Repurposed launch posts -->
+      <!-- Pre-launch Post 2 -->
+      <article class="ig-card reveal">
+        <div class="ig-mockup">
+          <div class="ig-header">
+            <div class="ig-user">
+              <div class="ig-avatar"><img src="https://mcusercontent.com/03320827781bfef6d5e9f5ead/images/9eddb0bf-fc55-a791-4d23-863ff2a0bd1a.png" data-amis-avatar alt="AMIS Development profile picture" /></div>
+              <div class="ig-username">amisdevelopment<span class="verified"></span></div>
+            </div>
+            <div class="ig-dots">⋯</div>
+          </div>
+          <div class="ig-image"><img src="https://mcusercontent.com/03320827781bfef6d5e9f5ead/images/fe1fc9fb-a8e5-60a0-3791-5ba876940037.png" alt="Launch Post 02" /></div>
+          <div class="ig-actions">
+            <div class="ig-actions-left">
+              <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.5 8 3 4 7 4c2 0 3.5 1 5 3 1.5-2 3-3 5-3 4 0 6.5 4 4.5 8C19 16.5 12 21 12 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-1 4 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-4-1L3 21l1.9-5.4a8.4 8.4 0 0 1-1-4 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 4-1h.5a8.5 8.5 0 0 1 8 8z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4z"/></svg>
+            </div>
+            <svg viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <div class="ig-likes">9,786 likes</div>
+          <div class="ig-caption">
+            <span class="username">amisdevelopment</span>
+            <span class="ig-caption-text">Almost in bloom. A garden of branded residences is preparing to reveal itself in Meydan, designed by Jacob &amp; Co. Register your interest before the doors open.</span>
+          </div>
+          <div class="ig-time">Today</div>
+        </div>
+        <div class="ig-meta">
+          <div class="ig-meta-label">Pre-launch 02 · Address</div>
+          <div class="ig-meta-pill green">4:5 Static</div>
+        </div>
+      </article>
+      <!-- Pre-launch Post 3 -->
+      <article class="ig-card reveal">
+        <div class="ig-mockup">
+          <div class="ig-header">
+            <div class="ig-user">
+              <div class="ig-avatar"><img src="https://mcusercontent.com/03320827781bfef6d5e9f5ead/images/9eddb0bf-fc55-a791-4d23-863ff2a0bd1a.png" data-amis-avatar alt="AMIS Development profile picture" /></div>
+              <div class="ig-username">amisdevelopment<span class="verified"></span></div>
+            </div>
+            <div class="ig-dots">⋯</div>
+          </div>
+          <div class="ig-image"><img src="https://mcusercontent.com/03320827781bfef6d5e9f5ead/images/a3a21ba6-903e-6984-6d71-7170d7b9dc45.png" alt="Launch Post 03" /></div>
+          <div class="ig-actions">
+            <div class="ig-actions-left">
+              <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.5 8 3 4 7 4c2 0 3.5 1 5 3 1.5-2 3-3 5-3 4 0 6.5 4 4.5 8C19 16.5 12 21 12 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-1 4 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-4-1L3 21l1.9-5.4a8.4 8.4 0 0 1-1-4 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 4-1h.5a8.5 8.5 0 0 1 8 8z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4z"/></svg>
+            </div>
+            <svg viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <div class="ig-likes">12,540 likes</div>
+          <div class="ig-caption">
+            <span class="username">amisdevelopment</span>
+            <span class="ig-caption-text">Soon: Fleurs de Jardin. A limited-edition community of branded villas and mansions in Meydan, designed by Jacob &amp; Co. Be among the first — register your interest.</span>
+          </div>
+          <div class="ig-time">1 day ago</div>
+        </div>
+        <div class="ig-meta">
+          <div class="ig-meta-label">Pre-launch 03 · Welcome</div>
+          <div class="ig-meta-pill pink">4:5 Static</div>
+        </div>
+      </article>
+      <!-- Pre-launch Post 4 -->
+      <article class="ig-card reveal">
+        <div class="ig-mockup">
+          <div class="ig-header">
+            <div class="ig-user">
+              <div class="ig-avatar"><img src="https://mcusercontent.com/03320827781bfef6d5e9f5ead/images/9eddb0bf-fc55-a791-4d23-863ff2a0bd1a.png" data-amis-avatar alt="AMIS Development profile picture" /></div>
+              <div class="ig-username">amisdevelopment<span class="verified"></span></div>
+            </div>
+            <div class="ig-dots">⋯</div>
+          </div>
+          <div class="ig-image"><img src="https://mcusercontent.com/03320827781bfef6d5e9f5ead/images/b8bf80b3-c2a0-2310-17c6-79b1ec12412f.png" alt="Launch Post 04" /></div>
+          <div class="ig-actions">
+            <div class="ig-actions-left">
+              <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.5 8 3 4 7 4c2 0 3.5 1 5 3 1.5-2 3-3 5-3 4 0 6.5 4 4.5 8C19 16.5 12 21 12 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-1 4 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-4-1L3 21l1.9-5.4a8.4 8.4 0 0 1-1-4 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 4-1h.5a8.5 8.5 0 0 1 8 8z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4z"/></svg>
+            </div>
+            <svg viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <div class="ig-likes">14,892 likes</div>
+          <div class="ig-caption">
+            <span class="username">amisdevelopment</span>
+            <span class="ig-caption-text">On the verge. Fleurs de Jardin — designed by Jacob &amp; Co. A rare new address taking shape in Meydan. Register your interest to walk through it first.</span>
+          </div>
+          <div class="ig-time">2 days ago</div>
+        </div>
+        <div class="ig-meta">
+          <div class="ig-meta-label">Pre-launch 04 · Detail</div>
+          <div class="ig-meta-pill gold">4:5 Static</div>
+        </div>
+      </article>
+    </div>
+
+    <div class="subsection-header"><span>Videos</span></div>
+
+    <div class="reel-grid">
       <!-- Reel 2 -->
       <article class="reel-card reveal">
         <div class="reel-mockup">
@@ -1846,7 +2108,6 @@
           <div class="ig-meta-pill green">16:9 Video · 0:12</div>
         </div>
       </article>
-
       <!-- Reel 3 -->
       <article class="reel-card reveal">
         <div class="reel-mockup">
@@ -1874,7 +2135,6 @@
           <div class="ig-meta-pill pink">16:9 Video · 0:10</div>
         </div>
       </article>
-
       <!-- Reel 4 -->
       <article class="reel-card reveal">
         <div class="reel-mockup">
@@ -1902,7 +2162,6 @@
           <div class="ig-meta-pill gold">16:9 Video · 0:11</div>
         </div>
       </article>
-
       <!-- Reel 5 -->
       <article class="reel-card reveal">
         <div class="reel-mockup">
@@ -1930,7 +2189,6 @@
           <div class="ig-meta-pill blue">16:9 Video · 0:08</div>
         </div>
       </article>
-
       <!-- Reel 6 -->
       <article class="reel-card reveal">
         <div class="reel-mockup">
@@ -1958,7 +2216,6 @@
           <div class="ig-meta-pill">16:9 Video · 0:15</div>
         </div>
       </article>
-
     </div>
   </div>
 </section>
@@ -1970,163 +2227,40 @@
       <div class="section-tag"><span class="tag-num">03</span> Launch Campaign</div>
       <div>
         <h2 class="section-title">The garden, in <em>full</em> bloom.</h2>
-        <p class="section-desc">The launch chapter. The teasers have done their quiet work; now the campaign opens its doors. Four invitations across the feed — same temperament, new call: register now to step inside Fleurs de Jardin.</p>
+        <p class="section-desc">The launch moment. A single, definitive film — the day Fleurs de Jardin steps fully into the world.</p>
       </div>
     </div>
 
-    <div class="ig-grid two-up">
+    <div class="subsection-header"><span>Launch Film</span></div>
 
-      <!-- Launch Post 1 -->
-      <article class="ig-card reveal">
-        <div class="ig-mockup">
-          <div class="ig-header">
-            <div class="ig-user">
-              <div class="ig-avatar"><img src="https://mcusercontent.com/03320827781bfef6d5e9f5ead/images/9eddb0bf-fc55-a791-4d23-863ff2a0bd1a.png" data-amis-avatar alt="AMIS Development profile picture" /></div>
-              <div class="ig-username">amisdevelopment<span class="verified"></span></div>
+    <div class="reel-grid featured">
+      <article class="reel-card reveal">
+        <div class="reel-mockup launch-film" data-yt-id="XmtTEzeQ_kU">
+          <!-- Click-to-play: thumbnail + custom play button until user taps; then iframe loads with sound -->
+          <img class="reel-thumbnail" src="https://i.ytimg.com/vi/XmtTEzeQ_kU/maxresdefault.jpg" alt="Fleurs de Jardin launch film thumbnail" />
+          <div class="reel-top"><span class="reel-top-label">Launch Film</span></div>
+          <div class="reel-play"></div>
+          <div class="reel-side">
+            <div class="reel-side-item heart"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.5 8 3 4 7 4c2 0 3.5 1 5 3 1.5-2 3-3 5-3 4 0 6.5 4 4.5 8C19 16.5 12 21 12 21z"/></svg><span>—</span></div>
+            <div class="reel-side-item"><svg viewBox="0 0 24 24" fill="none"><path d="M21 11.5a8.4 8.4 0 0 1-1 4 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-4-1L3 21l1.9-5.4a8.4 8.4 0 0 1-1-4 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 4-1h.5a8.5 8.5 0 0 1 8 8z"/></svg><span>—</span></div>
+            <div class="reel-side-item"><svg viewBox="0 0 24 24" fill="none"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4z"/></svg><span>Share</span></div>
+            <div class="reel-side-item disc"></div>
+          </div>
+          <div class="reel-bottom">
+            <div class="reel-user">
+              <div class="ig-avatar"><img src="https://mcusercontent.com/03320827781bfef6d5e9f5ead/images/9eddb0bf-fc55-a791-4d23-863ff2a0bd1a.png" data-amis-avatar alt="AMIS Development" /></div>
+              <span class="reel-user-name">amisdevelopment</span>
+              <span class="reel-follow">Follow</span>
             </div>
-            <div class="ig-dots">⋯</div>
+            <div class="reel-caption">The launch film for Fleurs de Jardin — designed by Jacob &amp; Co. The garden is open. Register now.</div>
+            <div class="reel-audio">Original Audio · Fleurs de Jardin</div>
           </div>
-          <div class="ig-image"><img src="https://mcusercontent.com/03320827781bfef6d5e9f5ead/images/8ba56047-d9ba-1a98-82f2-89a879467609.png" alt="Launch Post 01" /></div>
-          <div class="ig-actions">
-            <div class="ig-actions-left">
-              <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.5 8 3 4 7 4c2 0 3.5 1 5 3 1.5-2 3-3 5-3 4 0 6.5 4 4.5 8C19 16.5 12 21 12 21z"/></svg>
-              <svg viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-1 4 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-4-1L3 21l1.9-5.4a8.4 8.4 0 0 1-1-4 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 4-1h.5a8.5 8.5 0 0 1 8 8z"/></svg>
-              <svg viewBox="0 0 24 24"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4z"/></svg>
-            </div>
-            <svg viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
-          </div>
-          <div class="ig-likes">11,304 likes</div>
-          <div class="ig-caption">
-            <span class="username">amisdevelopment</span>
-            <span class="ig-caption-text">Fleurs de Jardin has bloomed. A rare collection of branded villas and mansions in Meydan, designed by Jacob &amp; Co. Register now to be among the first to step inside.</span>
-          </div>
-          <div class="ig-time">Today</div>
         </div>
         <div class="ig-meta">
-          <div class="ig-meta-label">Launch 01 · Reveal</div>
-          <div class="ig-meta-pill">4:5 Static</div>
+          <div class="ig-meta-label">Launch Film · The garden in full bloom</div>
+          <div class="ig-meta-pill gold">16:9 Video</div>
         </div>
       </article>
-
-      <!-- Launch Post 2 -->
-      <article class="ig-card reveal">
-        <div class="ig-mockup">
-          <div class="ig-header">
-            <div class="ig-user">
-              <div class="ig-avatar"><img src="https://mcusercontent.com/03320827781bfef6d5e9f5ead/images/9eddb0bf-fc55-a791-4d23-863ff2a0bd1a.png" data-amis-avatar alt="AMIS Development profile picture" /></div>
-              <div class="ig-username">amisdevelopment<span class="verified"></span></div>
-            </div>
-            <div class="ig-dots">⋯</div>
-          </div>
-          <div class="ig-image"><img src="https://mcusercontent.com/03320827781bfef6d5e9f5ead/images/fe1fc9fb-a8e5-60a0-3791-5ba876940037.png" alt="Launch Post 02" /></div>
-          <div class="ig-actions">
-            <div class="ig-actions-left">
-              <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.5 8 3 4 7 4c2 0 3.5 1 5 3 1.5-2 3-3 5-3 4 0 6.5 4 4.5 8C19 16.5 12 21 12 21z"/></svg>
-              <svg viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-1 4 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-4-1L3 21l1.9-5.4a8.4 8.4 0 0 1-1-4 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 4-1h.5a8.5 8.5 0 0 1 8 8z"/></svg>
-              <svg viewBox="0 0 24 24"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4z"/></svg>
-            </div>
-            <svg viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
-          </div>
-          <div class="ig-likes">9,786 likes</div>
-          <div class="ig-caption">
-            <span class="username">amisdevelopment</span>
-            <span class="ig-caption-text">The wait is over. A garden of branded residences has bloomed in Meydan, designed by Jacob &amp; Co. Now open for registration.</span>
-          </div>
-          <div class="ig-time">Today</div>
-        </div>
-        <div class="ig-meta">
-          <div class="ig-meta-label">Launch 02 · Address</div>
-          <div class="ig-meta-pill green">4:5 Static</div>
-        </div>
-      </article>
-
-      <!-- Launch Post 3 -->
-      <article class="ig-card reveal">
-        <div class="ig-mockup">
-          <div class="ig-header">
-            <div class="ig-user">
-              <div class="ig-avatar"><img src="https://mcusercontent.com/03320827781bfef6d5e9f5ead/images/9eddb0bf-fc55-a791-4d23-863ff2a0bd1a.png" data-amis-avatar alt="AMIS Development profile picture" /></div>
-              <div class="ig-username">amisdevelopment<span class="verified"></span></div>
-            </div>
-            <div class="ig-dots">⋯</div>
-          </div>
-          <div class="ig-image"><img src="https://mcusercontent.com/03320827781bfef6d5e9f5ead/images/a3a21ba6-903e-6984-6d71-7170d7b9dc45.png" alt="Launch Post 03" /></div>
-          <div class="ig-actions">
-            <div class="ig-actions-left">
-              <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.5 8 3 4 7 4c2 0 3.5 1 5 3 1.5-2 3-3 5-3 4 0 6.5 4 4.5 8C19 16.5 12 21 12 21z"/></svg>
-              <svg viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-1 4 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-4-1L3 21l1.9-5.4a8.4 8.4 0 0 1-1-4 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 4-1h.5a8.5 8.5 0 0 1 8 8z"/></svg>
-              <svg viewBox="0 0 24 24"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4z"/></svg>
-            </div>
-            <svg viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
-          </div>
-          <div class="ig-likes">12,540 likes</div>
-          <div class="ig-caption">
-            <span class="username">amisdevelopment</span>
-            <span class="ig-caption-text">Welcome to Fleurs de Jardin. A limited-edition community of branded villas and mansions, designed by Jacob &amp; Co., set within the lush gardens of Meydan. Register now.</span>
-          </div>
-          <div class="ig-time">1 day ago</div>
-        </div>
-        <div class="ig-meta">
-          <div class="ig-meta-label">Launch 03 · Welcome</div>
-          <div class="ig-meta-pill pink">4:5 Static</div>
-        </div>
-      </article>
-
-      <!-- Launch Post 4 -->
-      <article class="ig-card reveal">
-        <div class="ig-mockup">
-          <div class="ig-header">
-            <div class="ig-user">
-              <div class="ig-avatar"><img src="https://mcusercontent.com/03320827781bfef6d5e9f5ead/images/9eddb0bf-fc55-a791-4d23-863ff2a0bd1a.png" data-amis-avatar alt="AMIS Development profile picture" /></div>
-              <div class="ig-username">amisdevelopment<span class="verified"></span></div>
-            </div>
-            <div class="ig-dots">⋯</div>
-          </div>
-          <div class="ig-image"><img src="https://mcusercontent.com/03320827781bfef6d5e9f5ead/images/b8bf80b3-c2a0-2310-17c6-79b1ec12412f.png" alt="Launch Post 04" /></div>
-          <div class="ig-actions">
-            <div class="ig-actions-left">
-              <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.5 8 3 4 7 4c2 0 3.5 1 5 3 1.5-2 3-3 5-3 4 0 6.5 4 4.5 8C19 16.5 12 21 12 21z"/></svg>
-              <svg viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-1 4 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-4-1L3 21l1.9-5.4a8.4 8.4 0 0 1-1-4 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 4-1h.5a8.5 8.5 0 0 1 8 8z"/></svg>
-              <svg viewBox="0 0 24 24"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4z"/></svg>
-            </div>
-            <svg viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
-          </div>
-          <div class="ig-likes">14,892 likes</div>
-          <div class="ig-caption">
-            <span class="username">amisdevelopment</span>
-            <span class="ig-caption-text">Now revealed. Fleurs de Jardin — designed by Jacob &amp; Co. A rare new address in Meydan, where every detail has been chosen by instinct. Register now.</span>
-          </div>
-          <div class="ig-time">2 days ago</div>
-        </div>
-        <div class="ig-meta">
-          <div class="ig-meta-label">Launch 04 · Detail</div>
-          <div class="ig-meta-pill gold">4:5 Static</div>
-        </div>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-<!-- ===== Section 04: Landing Page Mockup ===== -->
-<section class="section" id="landing">
-  <div class="section-inner">
-    <div class="section-header reveal">
-      <div class="section-tag"><span class="tag-num">04</span> Project Landing Page</div>
-      <div>
-        <h2 class="section-title">Where the <em>campaign</em> comes to rest.</h2>
-        <p class="section-desc">The online home for Fleurs de Jardin — a quiet stage where every click from the campaign is gathered. Considered, uncluttered, designed in the same temperament as the address itself.</p>
-      </div>
-    </div>
-
-    <div class="browser-frame reveal">
-      <div class="browser-bar">
-        <div class="browser-dots"><span></span><span></span><span></span></div>
-        <div class="browser-url">amisdevelopment.com/fleursdejardin</div>
-      </div>
-      <div class="browser-body">
-        <img class="lp-mockup" src="https://mcusercontent.com/03320827781bfef6d5e9f5ead/images/887be212-3a49-88f0-cce9-272b7ee9484f.jpg" alt="Fleurs de Jardin landing page mockup" />
-      </div>
     </div>
   </div>
 </section>
@@ -2151,6 +2285,50 @@
     });
   }, { threshold: 0.12 });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Landing page collapse / expand toggle
+  document.querySelectorAll('.landing-toggle').forEach(btn => {
+    const wrap = btn.closest('.landing-collapse');
+    const label = btn.querySelector('.landing-toggle-label');
+    btn.addEventListener('click', () => {
+      const collapsed = wrap.dataset.collapsed === 'true';
+      wrap.dataset.collapsed = collapsed ? 'false' : 'true';
+      btn.setAttribute('aria-expanded', collapsed ? 'true' : 'false');
+      if (label) label.textContent = collapsed ? 'Collapse view' : 'Expand to full page';
+      if (collapsed) {
+        // expanding — no scroll change
+      } else {
+        // collapsing — scroll back to the top of the landing block so the user isn't lost
+        wrap.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+  // Launch film: click-to-play. Replaces thumbnail with an iframe (autoplay + sound) on click.
+  document.querySelectorAll('.reel-mockup.launch-film').forEach(mockup => {
+    const ytId = mockup.dataset.ytId;
+    if (!ytId || ytId === 'YOUTUBE_ID') return;
+    let started = false;
+    mockup.addEventListener('click', (e) => {
+      if (started) return;
+      started = true;
+      const iframe = document.createElement('iframe');
+      iframe.className = 'reel-video';
+      iframe.dataset.ytId = ytId;
+      iframe.src = 'https://www.youtube-nocookie.com/embed/' + ytId +
+        '?autoplay=1&mute=0&controls=1&modestbranding=1&rel=0&playsinline=1&enablejsapi=1';
+      iframe.setAttribute('frameborder', '0');
+      iframe.setAttribute('allow', 'autoplay; encrypted-media; picture-in-picture');
+      iframe.setAttribute('allowfullscreen', '');
+      // Remove the thumbnail and any chrome that would compete with the player
+      const thumb = mockup.querySelector('.reel-thumbnail');
+      if (thumb) thumb.remove();
+      mockup.querySelectorAll('.reel-top, .reel-side, .reel-bottom, .reel-play').forEach(el => el.remove());
+      mockup.appendChild(iframe);
+      mockup.classList.add('playing');
+      mockup.style.cursor = 'default';
+    });
+  });
 
   // YouTube reel videos: autoplay muted via embed params; mute toggle + viewport pause via IFrame API
   const muteIcons = `
