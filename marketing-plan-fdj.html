@@ -282,7 +282,8 @@
     gap: 50px 40px;
   }
   .ig-grid.two-up { grid-template-columns: repeat(2, 1fr); gap: 50px 40px; max-width: 1100px; margin: 0 auto; }
-  .ig-grid.three-up { grid-template-columns: repeat(3, 1fr); gap: 40px 28px; }
+  .ig-grid.three-up { grid-template-columns: repeat(3, 1fr); gap: 40px 28px; align-items: stretch; }
+  .ig-grid > .ig-card { height: 100%; }
   @media (max-width: 1100px) {
     .ig-grid { grid-template-columns: repeat(2, 1fr); }
     .ig-grid.three-up { grid-template-columns: repeat(2, 1fr); gap: 50px 40px; max-width: 1100px; margin: 0 auto; }
@@ -324,6 +325,7 @@
     display: flex;
     flex-direction: column;
     gap: 18px;
+    height: 100%; /* fill grid row so all sibling cards are equal height */
   }
   .ig-mockup {
     background: var(--card);
@@ -332,7 +334,12 @@
     border: 1px solid var(--line);
     box-shadow: 0 30px 60px -25px rgba(0,0,0,0.7), 0 10px 25px -10px rgba(0,0,0,0.5);
     transition: transform 0.5s cubic-bezier(.2,.8,.2,1), box-shadow 0.5s;
+    flex: 1; /* mockup fills the card vertically */
+    display: flex;
+    flex-direction: column;
   }
+  /* Caption absorbs any extra vertical space so different-length captions don't make mockups unequal */
+  .ig-caption { flex: 1; }
   .ig-card:hover .ig-mockup {
     transform: translateY(-6px);
     box-shadow: 0 40px 80px -25px rgba(255, 91, 58, 0.25), 0 10px 25px -10px rgba(0,0,0,0.5);
@@ -1954,7 +1961,7 @@
             </div>
             <div class="ig-dots">⋯</div>
           </div>
-          <div class="ig-image"><img src="https://mcusercontent.com/03320827781bfef6d5e9f5ead/images/ccb9e716-13c3-4f2f-cc0b-f464dcdb69a2.jpg" alt="Teaser Post 06" /></div>
+          <div class="ig-image"><img src="https://mcusercontent.com/03320827781bfef6d5e9f5ead/images/6579b525-016b-ab03-e2a1-e92797cb0452.png" alt="Teaser Post 06 — community view" /></div>
           <div class="ig-actions">
             <div class="ig-actions-left">
               <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.5 8 3 4 7 4c2 0 3.5 1 5 3 1.5-2 3-3 5-3 4 0 6.5 4 4.5 8C19 16.5 12 21 12 21z"/></svg>
@@ -1966,7 +1973,7 @@
           <div class="ig-likes">9,318 likes</div>
           <div class="ig-caption">
             <span class="username">amisdevelopment</span>
-            <span class="ig-caption-text">Some places impress you. Others understand you. Fleurs de Jardin — designed by Jacob &amp; Co. Coming soon in Meydan.</span>
+            <span class="ig-caption-text">A private world for a select few. Manicured landscapes, winding pathways, and a community shaped with intention. Fleurs de Jardin — designed by Jacob &amp; Co. Coming soon in Meydan.</span>
           </div>
           <div class="ig-time">4 hours ago</div>
         </div>
